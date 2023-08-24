@@ -35,7 +35,6 @@ app.use(cors())
 app.use(bodyparser.json({ limit: "100mb" }))
 app.use(bodyparser.urlencoded({ limit: "100mb", extended: false, parameterLimit: 100000 }))
 
-
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "/Public/views"))
 app.set("report", path.join(__dirname, "/Public/report"))
