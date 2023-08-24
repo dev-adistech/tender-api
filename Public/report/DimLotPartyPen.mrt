@@ -1,0 +1,363 @@
+{
+  "ReportVersion": "2019.3.1",
+  "ReportGuid": "71917c207f72ea78ab53fc09d12dd9ce",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "DimLotPartyPen.mrt",
+  "ReportCreated": "/Date(1657914616000+0530)/",
+  "ReportChanged": "/Date(1657914616000+0530)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "Resources": {
+      "0": {
+        "Name": "DimLotPartyPen",
+        "Alias": "DimLotPartyPen",
+        "Type": "Json",
+        "Image": "yTk93oemKSdsiaL1mKjUEMxFYwgpDX03Eh4Z/ODaTw7ihzJa8xRtcn97pWo15HVFTQyJMYv7xA01D4FWN1PVWT26uElkuPLCM8zUovIEF5LChKT7D9GrvKlE8iJK9gh0sKq2DJO1Nd5TSEqHaF/SHdbWrcuLtB3AJTP65EcIlCl7Sl9A5RLmBvh7GpGXVYCwnbmaywKF4+VHHxNlvzh7xTFyDv8VGjfXq8uwkfOGgECdNFpFqlvcSz8tB02g70S8xOfApAp12oG1+pcVYdTnTwf8AO3KhXbVeW7Vqh+E7bgnYOY1L8YfW1DCm/xbOfMj1aIMkLRnLhS9hfJ/mnbSNWssIGOMg8NknvqVpV5XQQSH/gK/EbpRa/ZEIe96boWgrhf0Q29+pnWtDmKkKIb89YUX0fCn76vlZrh2l9sateaIc13Z6eYU2QanIT5OkXAjwfo9zVbYNaca49PEmXfdVyDqMvWzWnSy6WwRqNMvuq5qSxJ7zoyGy2xSmfGXoGpczBF7nP9g1F0RswrkmVDcH6tTRlda6Tl/PQhWC/YiGBjn5jmX1iD313OMcgdk/2XU1ZvMIXMPN1WRR4IifgcgfPgltFw5pdwYAROybmL2wGHSUzJkym4+AaWUEjTDlXe3ER+HS8khK9NF4i4YpkX9c8hGULXkZbs65dxUPklSMo3smuMK2US5xI/AhNuSPyPsV0iy7j3TFBcHhdChA4zS2jVA3yad69O598vAaS/oF/bc9bZxpcCbvRumkFI5xaC3KlyWPgQP+vE2ZZ7DwwnEwQQpsyPaIOptVVAYOt0oAf8cpGWCCtLyjl2FSc75q4BlFZLKaifoHprUOONbfwBNPf0QDIwnr4Ym4aq6f0FYEnT0UPNX7YwGCDcr8F2eQOrQuqs+QZFYFR0pV5VV5f1oRBDjRWrpCca+1nQykfHLUUJrL0V/lcYPRNJkrJCJgS8ILDqdF38SEgxlF+yHsQt2ytgd/orzPJD6vl/nF4RPghUdBBrRlnUGDs2SHuNGZWhkbE9//JW7uOB3FrxU2fPC/923vA2ngT7kRdoVApUaNF4A6W4BWH8XJ2HUPF1YBqPe/UUenVWsrWfsSvtYW9KXRux0YmRjTqklR8sdJrK8Y25ygO8j0qujp/tfyZT/eoI9qew3Jk63e2v7GMsiPDEN4fww5gM="
+      }
+    },
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "DT",
+        "Alias": "DT",
+        "Columns": {
+          "0": {
+            "Name": "CODE",
+            "Index": -1,
+            "NameInSource": "CODE",
+            "Alias": "CODE",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "P_CODE",
+            "Index": -1,
+            "NameInSource": "P_CODE",
+            "Alias": "P_CODE",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "IPKT",
+            "Index": -1,
+            "NameInSource": "IPKT",
+            "Alias": "IPKT",
+            "Type": "System.Object"
+          },
+          "3": {
+            "Name": "OCRT",
+            "Index": -1,
+            "NameInSource": "OCRT",
+            "Alias": "OCRT",
+            "Type": "System.Object"
+          },
+          "4": {
+            "Name": "ICRT",
+            "Index": -1,
+            "NameInSource": "ICRT",
+            "Alias": "ICRT",
+            "Type": "System.Object"
+          },
+          "5": {
+            "Name": "ECRT",
+            "Index": -1,
+            "NameInSource": "ECRT",
+            "Alias": "ECRT",
+            "Type": "System.Object"
+          },
+          "6": {
+            "Name": "RCRT",
+            "Index": -1,
+            "NameInSource": "RCRT",
+            "Alias": "RCRT",
+            "Type": "System.Object"
+          },
+          "7": {
+            "Name": "RPCS",
+            "Index": -1,
+            "NameInSource": "RPCS",
+            "Alias": "RPCS",
+            "Type": "System.Object"
+          },
+          "8": {
+            "Name": "SIZE",
+            "Index": -1,
+            "NameInSource": "SIZE",
+            "Alias": "SIZE",
+            "Type": "System.Object"
+          },
+          "9": {
+            "Name": "PER",
+            "Index": -1,
+            "NameInSource": "PER",
+            "Alias": "PER",
+            "Type": "System.Object"
+          },
+          "10": {
+            "Name": "ReportFilterTitle",
+            "Index": -1,
+            "NameInSource": "ReportFilterTitle",
+            "Alias": "ReportFilterTitle",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "DimLotPartyPen.root"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiJsonDatabase",
+        "Name": "DimLotPartyPen",
+        "Alias": "DimLotPartyPen",
+        "PathData": "resource://DimLotPartyPen"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page1",
+      "Guid": "a7390de07cce5c5085c9e131deeb9c1e",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:Transparent",
+      "Components": {
+        "0": {
+          "Ident": "StiReportTitleBand",
+          "Name": "ReportTitleBand1",
+          "ClientRectangle": "0,0.4,19,0.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "d2eee828a4c8177c552d60a478cccde9",
+              "CanGrow": true,
+              "ClientRectangle": "0,0,19,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.ReportFilterTitle}"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "Guid": "e0edc7cc776ca5f1f9b9b9ec2f09a18d",
+              "ClientRectangle": "15,0,4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Today.ToString(\"dd/MM/yyyy\")} {Time.ToString(\"hh:mm tt\")}"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiCrossTab",
+              "Name": "CrossTab1",
+              "ClientRectangle": "0,0.8,7.6,2.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "Components": {
+                "0": {
+                  "Ident": "StiCrossRowTotal",
+                  "Name": "CrossTab1_RowTotal1",
+                  "Guid": "5ae1f4af5b363d99682512466af561c5",
+                  "ClientRectangle": "0,1.3,0.9,0.4",
+                  "Restrictions": "AllowMove, AllowResize, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Total"
+                  },
+                  "Border": "All;155,155,155;;;;;;solid:Black",
+                  "Brush": "solid:255,255,255",
+                  "TextBrush": "solid:Black"
+                },
+                "1": {
+                  "Ident": "StiCrossTitle",
+                  "Name": "CrossTab1_Row1_Title",
+                  "Guid": "9878fdf3797e0e3593da977f5ba02887",
+                  "ClientRectangle": "0,0.45,0.9,0.4",
+                  "Restrictions": "AllowMove, AllowResize, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Lot"
+                  },
+                  "Border": "All;155,155,155;;;;;;solid:Black",
+                  "Brush": "solid:White",
+                  "TextBrush": "solid:105,105,105",
+                  "TypeOfComponent": "Row:CrossTab1_Row1"
+                },
+                "2": {
+                  "Ident": "StiCrossColumnTotal",
+                  "Name": "CrossTab1_ColTotal1",
+                  "Guid": "070d4c2c1007aaeff831ae6aaada7432",
+                  "ClientRectangle": "2.15,0.45,0.7,0.4",
+                  "Restrictions": "AllowMove, AllowResize, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Total"
+                  },
+                  "Border": "All;155,155,155;;;;;;solid:Black",
+                  "Brush": "solid:255,255,255",
+                  "TextBrush": "solid:Black"
+                },
+                "3": {
+                  "Ident": "StiCrossTitle",
+                  "Name": "CrossTab1_LeftTitle",
+                  "Guid": "62dbf6687d3bcbe02ef6df1ebcff4b5a",
+                  "ClientRectangle": "0,0,0.9,0.4",
+                  "Restrictions": "AllowMove, AllowResize, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "DT"
+                  },
+                  "Border": "All;155,155,155;;;;;;solid:Black",
+                  "Brush": "solid:White",
+                  "TextBrush": "solid:105,105,105",
+                  "MergeHeaders": false,
+                  "PrintOnAllPages": false,
+                  "TypeOfComponent": "LeftTitle"
+                },
+                "4": {
+                  "Ident": "StiCrossTitle",
+                  "Name": "CrossTab1_RightTitle",
+                  "Guid": "1d836b9d2aad674cb222472f9e9df5cb",
+                  "ClientRectangle": "0.95,0,1.9,0.4",
+                  "Restrictions": "AllowMove, AllowResize, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "P_CODE"
+                  },
+                  "Border": "All;155,155,155;;;;;;solid:Black",
+                  "Brush": "solid:White",
+                  "TextBrush": "solid:105,105,105",
+                  "MergeHeaders": false,
+                  "PrintOnAllPages": false,
+                  "TypeOfComponent": "RightTitle"
+                },
+                "5": {
+                  "Ident": "StiCrossRow",
+                  "Name": "CrossTab1_Row1",
+                  "Guid": "543cdb0e236757668d0d9d5b08e3316d",
+                  "ClientRectangle": "0,0.9,0.9,0.4",
+                  "Alias": "CODE",
+                  "Restrictions": "AllowMove, AllowResize, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiCrossHeaderInteraction"
+                  },
+                  "Text": {
+                    "Value": "CODE"
+                  },
+                  "Border": "All;155,155,155;;;;;;solid:Black",
+                  "Brush": "solid:White",
+                  "TextBrush": "solid:105,105,105",
+                  "Value": {
+                    "Value": "{DT.CODE}"
+                  },
+                  "DisplayValue": {
+                    "Value": "{DT.CODE}"
+                  },
+                  "TotalGuid": "5ae1f4af5b363d99682512466af561c5"
+                },
+                "6": {
+                  "Ident": "StiCrossColumn",
+                  "Name": "CrossTab1_Column1",
+                  "Guid": "60ea0a1482f19e7b04504f20a5c8c851",
+                  "ClientRectangle": "0.95,0.45,1.2,0.4",
+                  "Alias": "P_CODE",
+                  "Restrictions": "AllowMove, AllowResize, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiCrossHeaderInteraction"
+                  },
+                  "Text": {
+                    "Value": "P_CODE"
+                  },
+                  "Border": "All;155,155,155;;;;;;solid:Black",
+                  "Brush": "solid:White",
+                  "TextBrush": "solid:105,105,105",
+                  "Value": {
+                    "Value": "{DT.P_CODE}"
+                  },
+                  "DisplayValue": {
+                    "Value": "{DT.P_CODE}"
+                  },
+                  "TotalGuid": "070d4c2c1007aaeff831ae6aaada7432"
+                },
+                "7": {
+                  "Ident": "StiCrossSummary",
+                  "Name": "CrossTab1_Sum1",
+                  "Guid": "beaf988bc7e928e0e96fa27c0cc2b0ba",
+                  "ClientRectangle": "0.95,0.9,1.2,0.4",
+                  "Alias": "IPKT",
+                  "Restrictions": "AllowMove, AllowResize, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "0"
+                  },
+                  "Border": "All;155,155,155;;;;;;solid:Black",
+                  "Brush": "solid:255,255,255",
+                  "TextBrush": "solid:Black",
+                  "Value": {
+                    "Value": "{DT.IPKT}"
+                  }
+                }
+              },
+              "DataSourceName": "DT"
+            }
+          }
+        }
+      },
+      "PageWidth": 21,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}
