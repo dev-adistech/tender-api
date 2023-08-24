@@ -1,0 +1,407 @@
+{
+  "ReportVersion": "2019.3.1",
+  "ReportGuid": "cf243ec0e02f05665b4bb622c1cdba09",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "DockViewDetPrint.mrt",
+  "ReportCreated": "/Date(1672159440000+0530)/",
+  "ReportChanged": "/Date(1672159440000+0530)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "Resources": {
+      "0": {
+        "Name": "DockViewDetPrint",
+        "Alias": "DockViewDetPrint",
+        "Type": "Json",
+        "Image": "XjwFkdwTV+jLy0ovkFnPYzHbYw4cAlTqQW9+R6MQOTdxDLBCMWh/7WrmbanMOpmOpks7EnN4RuYUW2OHNJsElhPmqA2oHmfHJsykoD1G6Eh1RhM5U9p7RtCyLJIU0hCOdI84MohLLGNcmegUMLEQcFN0WixmbbaNa2gDRQXOBDJYUu6RWBGE5Mx6MVoYLC0g2PpNwPV17kZQ9xCxWQrvUGH2AWWRXUXtEXRrOKodeEdBeaOdJPRQmDwDyldNZ/NyWM7myqjQNrCP74l2nf7/3n05Gc0Vc4K6Kf88/Q8Tj4ZYBeTYbtCmEUqKL90V8aJR0A45Je2FFWjIWoDDDwrd1vVxzc8wXQ7lo/6UUEsCfXmwfTR33lTPGoCEC2ohAgHmCwYv+ysrVuY3Vo6j1Wv2b/QD70S/fCCCUrLRlkb6WUDQqkhrB3U5OMJM2v4UFr1fmFt9x1otIMijBrLNX5Ccd9n8EQaOEqapebb9al9hoalNdpP84+CzMUjhWTDgMTQIq7OkQgC+BjXFLufvrvygE7VRk6ip73YxZbfk0Cn+y8dAsN3cJYKxbh6wRVfRQRg+ubk5IC6dvmagG6kv6xK0Q2QtDwzrgi2LT3DMKvbYTChFPzhNJj7cGVY9FE+sITlrgJzIPc8iq1t/TxTQOgFhkdMwwxWucfYydFtKeO4S3eDITp9wk4IYdXfOSVaYi3fIxE7b8r0v61arlqABKOxLUouFPX+92DKJdkq+thmPxCcPyj0ZLi4tcxbD/LJ6pi9i2aqbmPiM4UZGyZy9iA=="
+      }
+    },
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "DT",
+        "Alias": "DT",
+        "Columns": {
+          "0": {
+            "Name": "L_CODE",
+            "Index": -1,
+            "NameInSource": "L_CODE",
+            "Alias": "L_CODE",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "I_PCS",
+            "Index": -1,
+            "NameInSource": "I_PCS",
+            "Alias": "I_PCS",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "I_CARAT",
+            "Index": -1,
+            "NameInSource": "I_CARAT",
+            "Alias": "I_CARAT",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "ReportFilterTitle",
+            "Index": -1,
+            "NameInSource": "ReportFilterTitle",
+            "Alias": "ReportFilterTitle",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "DockViewDetPrint.root"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiJsonDatabase",
+        "Name": "DockViewDetPrint",
+        "Alias": "DockViewDetPrint",
+        "PathData": "resource://DockViewDetPrint"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page1",
+      "Guid": "1fc5864a3b0de4541966a561af173fd2",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:Transparent",
+      "Components": {
+        "0": {
+          "Ident": "StiReportTitleBand",
+          "Name": "ReportTitleBand1",
+          "ClientRectangle": "0,0.4,19,0.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "04e896407cebc865b93b212db896bbe2",
+              "ClientRectangle": "0,0,19,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.ReportFilterTitle}"
+              },
+              "Font": ";14;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiReportTitleBand",
+          "Name": "ReportTitleBand2",
+          "ClientRectangle": "0,2,19,2.1",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "Guid": "361a5bfbd866d1b5e9415d3eddfc70f0",
+              "ClientRectangle": "2.8,0,3.1,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Time}"
+              },
+              "Font": ";14;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextFormat": {
+                "Ident": "StiTimeFormatService",
+                "StringFormat": "T"
+              },
+              "Type": "SystemVariables"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "Guid": "3a964869ef59b7edf50118500509620b",
+              "ClientRectangle": "0,0,2.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Today}"
+              },
+              "Font": ";14;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextFormat": {
+                "Ident": "StiDateFormatService",
+                "StringFormat": "dd/MM/yyyy"
+              },
+              "Type": "SystemVariables"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "HeaderDT_L_CODE",
+              "Guid": "fb220340aef996132ed2c409d3d30615",
+              "ClientRectangle": "0,1,1.9,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Lot"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";14;Bold;",
+              "Border": "Top, Bottom;;;Double;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "HeaderDT_I_PCS",
+              "Guid": "01afb35c675340a9ce8c7624fdee07a2",
+              "ClientRectangle": "1.9,1,1.9,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Pcs"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";14;Bold;",
+              "Border": "Top, Bottom;;;Double;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "HeaderDT_I_CARAT",
+              "Guid": "11d64a939ccf419fa74b84ad18a6b91a",
+              "ClientRectangle": "3.8,1,1.9,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Crt"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";14;Bold;",
+              "Border": "Top, Bottom;;;Double;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            }
+          }
+        },
+        "2": {
+          "Ident": "StiDataBand",
+          "Name": "DataDT",
+          "ClientRectangle": "0,4.9,19,0.5",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "DataDT_L_CODE",
+              "Guid": "f1ce65cc956f59b3c1689875e6e92c27",
+              "CanGrow": true,
+              "ClientRectangle": "0,0,1.9,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.L_CODE}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";14;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "DataDT_I_PCS",
+              "Guid": "9246034e4c3ebf5ad769c1df8034ab8b",
+              "CanGrow": true,
+              "ClientRectangle": "1.9,0,1.9,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.I_PCS}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";14;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "DataDT_I_CARAT",
+              "Guid": "b733eef641142ee37dd11684451c3592",
+              "CanGrow": true,
+              "ClientRectangle": "3.8,0,1.9,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.I_CARAT}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";14;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "GroupSeparator": ",",
+                "UseGroupSeparator": false
+              }
+            }
+          },
+          "DataSourceName": "DT"
+        },
+        "3": {
+          "Ident": "StiReportSummaryBand",
+          "Name": "ReportSummaryBand1",
+          "ClientRectangle": "0,6.2,19,1",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text4",
+              "Guid": "83d6e588d5e9338f4d6b41aa63fc4a4d",
+              "ClientRectangle": "0,0,1.9,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Total"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";14;Bold;",
+              "Border": "Top, Bottom;;;Double;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextFormat": {
+                "Ident": "StiDateFormatService",
+                "StringFormat": "dd/MM/yyyy"
+              },
+              "Type": "SystemVariables"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "79df4f9fa6147193289c5a739f1ed9d0",
+              "ClientRectangle": "1.9,0,1.9,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.I_PCS)}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";14;Bold;",
+              "Border": "Top, Bottom;;;Double;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextFormat": {
+                "Ident": "StiDateFormatService",
+                "StringFormat": "dd/MM/yyyy"
+              },
+              "Type": "Totals"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "ee2246d6d99a8e6a391c103dc8fb22a6",
+              "ClientRectangle": "3.8,0,1.9,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.I_CARAT)}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";14;Bold;",
+              "Border": "Top, Bottom;;;Double;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "GroupSeparator": ",",
+                "UseGroupSeparator": false
+              },
+              "Type": "Totals"
+            }
+          }
+        }
+      },
+      "PageWidth": 21,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}

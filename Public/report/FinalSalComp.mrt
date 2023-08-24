@@ -1,0 +1,1243 @@
+{
+  "ReportVersion": "2019.3.1",
+  "ReportGuid": "49fac35f99c8fb7cfda2b698f5ff8ef2",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "FinalSalComp.mrt",
+  "ReportCreated": "/Date(1660793300000+0530)/",
+  "ReportChanged": "/Date(1660793300000+0530)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "Resources": {
+      "0": {
+        "Name": "FinalSalComp",
+        "Alias": "FinalSalComp",
+        "Type": "Json",
+        "Image": "vq3TJiIg3LrrtUk+TP+8Yqy0t7JXe8cJM2vFegrbRYGLsWQkAUizednbr3LAv7mc7IUZ1Tc6oFahT8HGqi1EaQdq8JVEBelp7bxVrrAnluerRx+f2Gn1HfJHuVLwo6GlMpvpNG46fYIe6DhdSjWDS3VenwVJD833Pd3DhSyXApQMsXzB/XXRfDsSLhck80FlvFKxJ++Bg0qg3LnjJkkDW/afiExNhcXbLU93iBjtf9lju273xT93QqqbNVdC5Y1A/1mDLUo0Te5G29KEevACCd0vJsidVhi4gVH2Rkv/EvJT7jMj5B/tEZ/EDCy48rJq7HQ3M4g6+DBXaOP4GWQ0HnNA4It1NmoMMuI4eug4pin++JA8+TUB6QI6i9j4zKmOwp7uFGHPjp8XwYFL55fDCK9sVXxp6VripQ/O4rgzCDUOQOE7MZzHsqVzH4/6Mnp3kyUlhGQoRHZ1ClA49RME4ZS9w0/LkJ4AAdtnCAwkIk+cRCm7/p2i0/FGHOzo+8uLaJUO4s3lf9UHYFQLuqF8MfrOwv2x76ayAv/xhMz/8aWd8mAkKX+SILETVetbtQev4VLkcuLyaPCcQOqdel0NVrdJaGLxg+cK9XACaA127c3isjLTK5zGeBkGUMXmAtXRONZMxa8dmFOxE41GZYqhc4fulQaZDXPceIJkrYjQg8/UOJZqkkTQ/PH/kBSTEAnPXs/aKfs2TjAchxEXfGZ8unCfEZ4Z5t0cKIGI8UzCcVmpBqhEZlTly/FoCJh55XawjGYdc5OZUGM9/iJkzX+KuLUVes3LRELsrKt8sB9jQr6drwAcDSq9cCU/9m4tIAL+sDXNrsTG01bBY8iBeH/A/ByVhB2qCoCiWXp02Kf6UWmYYT05KLATSJ3GCKRwHObWd1QNlERKGVTW3rgfV026qWfkXfKSG2vyOqn6EmK1qkeOwdSNI/kHyTqNHw9Pn9+mzaQerloaIyumYtBDvQZvIBQ6Su34lTZVhsINuHEZOiV1mrSiJtnsFAePPZEERrZZVo2z+1jE53yQslwqjbXO4NjGgk3WP9xJUEwcpuncFIkIeb9qRF320vw/DFil01APx8FFkhxtFYYPw/r7EgF8zFr8QdHW5ODhxo9+oHE7NwGZ/vEdl0DN7RHkDPDut8fX2DvhH0SWaN7LuILBJoB9Tbh4rqTcJzMDtBkQLt7BoFisK7H62fhh63UVkcDiraPqntTMhlAapAPX8uYz79MOwAYRWkBx9MCHngbwrJRkNmcXFJI0zlexXA7OAvyjfwJCSmSnpZHVN1zP8pM1N5LtpX9QQoMSWwaEKUDf7JWZDCNeJYBtkAUZ9jn/J9DmfJ73FgqkYR3n/YthTSlIoulhjH8w3wPQtSSlcuENih/qTZIpdAw8w6s0bVbB/8s3p5mRTri9ZQqvLiDFC92JGQ=="
+      },
+      "1": {
+        "Name": "download",
+        "Alias": "download",
+        "Image": "Z9syQ9LOh1v/CZg5ojRMIcFdWQn7bztbTm0kY1iOKrAe+M6J/84H1ew6kgsC8iP7AbKYUS08OTNp0ytyv0f/oLTn/uNHj8NKwl6554bzseLfJa2FHvgYgSm3zpbpsxDHHVGAo3ZD0s+GSx2wkfp0hcq1wT1s1VOvSm3KTiahPIP/H2FbIBoDkNHTcXIWS68EhsAh/OK6KLFIfYxwVQS3Rpecm9a9cbzEZvD6I+RhZxH+XE5ZTIq2G0jkuL/Uudx445q1Zuezkxq0t2fw4n9VufsMWVkDhkB9Bz4ULLlfYqSV+6KTqlIeDkzAENpQCcmbStOpZWWHJ/pu4Xebxolmy58rZ/dRNNzRf7PFz3LCm+ncwmYWpInKxHzXWUHbo3hLwdttaa3s7vHqmQy96UeBtrXYmx7cD6A108HXjGHHXugSo7dBcA=="
+      }
+    },
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "DT",
+        "Alias": "DT",
+        "Columns": {
+          "0": {
+            "Name": "EMP_NAME",
+            "Index": -1,
+            "NameInSource": "EMP_NAME",
+            "Alias": "EMP_NAME",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "M_CODE",
+            "Index": -1,
+            "NameInSource": "M_CODE",
+            "Alias": "M_CODE",
+            "Type": "System.Object"
+          },
+          "2": {
+            "Name": "EMP_CODE",
+            "Index": -1,
+            "NameInSource": "EMP_CODE",
+            "Alias": "EMP_CODE",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "TYPE",
+            "Index": -1,
+            "NameInSource": "TYPE",
+            "Alias": "TYPE",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "MPCS",
+            "Index": -1,
+            "NameInSource": "MPCS",
+            "Alias": "MPCS",
+            "Type": "System.Object"
+          },
+          "5": {
+            "Name": "EXPCRT",
+            "Index": -1,
+            "NameInSource": "EXPCRT",
+            "Alias": "EXPCRT",
+            "Type": "System.Object"
+          },
+          "6": {
+            "Name": "MCRT",
+            "Index": -1,
+            "NameInSource": "MCRT",
+            "Alias": "MCRT",
+            "Type": "System.Object"
+          },
+          "7": {
+            "Name": "EMPSAL",
+            "Index": -1,
+            "NameInSource": "EMPSAL",
+            "Alias": "EMPSAL",
+            "Type": "System.Object"
+          },
+          "8": {
+            "Name": "DIF",
+            "Index": -1,
+            "NameInSource": "DIF",
+            "Alias": "DIF",
+            "Type": "System.Object"
+          },
+          "9": {
+            "Name": "CRT_DIF",
+            "Index": -1,
+            "NameInSource": "CRT_DIF",
+            "Alias": "CRT_DIF",
+            "Type": "System.Object"
+          },
+          "10": {
+            "Name": "GRP",
+            "Index": -1,
+            "NameInSource": "GRP",
+            "Alias": "GRP",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "WSALARY",
+            "Index": -1,
+            "NameInSource": "WSALARY",
+            "Alias": "WSALARY",
+            "Type": "System.Object"
+          },
+          "12": {
+            "Name": "DT_EXP",
+            "Index": -1,
+            "NameInSource": "DT_EXP",
+            "Alias": "DT_EXP",
+            "Type": "System.Object",
+            "Ident": "Calc",
+            "Expression": "(DT.EXPCRT/DT.MCRT)*100"
+          },
+          "13": {
+            "Name": "ReportFilterTitle",
+            "Index": -1,
+            "NameInSource": "ReportFilterTitle",
+            "Alias": "ReportFilterTitle",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "FinalSalComp.root"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiJsonDatabase",
+        "Name": "FinalSalComp",
+        "Alias": "FinalSalComp",
+        "PathData": "resource://FinalSalComp"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page1",
+      "Guid": "0743b771b1f2286490cb0cde40b8b7b1",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:Transparent",
+      "Components": {
+        "0": {
+          "Ident": "StiReportTitleBand",
+          "Name": "ReportTitleBand1",
+          "ClientRectangle": "0,0.4,28,0.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text23",
+              "Guid": "2af02b1b8263a617fc4ae27e520dc0fe",
+              "CanGrow": true,
+              "ClientRectangle": "0,0,26.9,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.ReportFilterTitle}"
+              },
+              "VertAlignment": "Center",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "empty",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text24",
+              "Guid": "25fcad310cd06a31dcff1c675cdaf950",
+              "ClientRectangle": "24.6,0,3.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Today.ToString(\"dd/MM/yyyy\")} {Time.ToString(\"hh:mm tt\")}"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiGroupHeaderBand",
+          "Name": "GroupHeaderBand1",
+          "ClientRectangle": "0,2,28,0.5",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "DataDT_GRP",
+              "Guid": "d82181244f83179245859738f41b6e28",
+              "CanGrow": true,
+              "ClientRectangle": "0,0,26.9,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.GRP}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            }
+          },
+          "Condition": {
+            "Value": "{DT.GRP}"
+          }
+        },
+        "2": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderDT",
+          "ClientRectangle": "0,3.3,28,0.5",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "HeaderDT_M_CODE",
+              "Guid": "f7cdeed8a5935d1929ec91b10d64f13c",
+              "ClientRectangle": "0,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "MCode"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "HeaderDT_EMP_NAME",
+              "Guid": "33f32747b3347fa8b5b7815501803cdb",
+              "ClientRectangle": "2.5,0,2.3,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "EmpName"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "HeaderDT_MPCS",
+              "Guid": "21358dd74ec55407a0d43611ab531fc9",
+              "ClientRectangle": "4.8,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "MPcs"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "HeaderDT_MCRT",
+              "Guid": "3cd23050eac7ef1183bbf552edadcb0a",
+              "ClientRectangle": "7.3,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "MCarat"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "HeaderDT_EXPCRT",
+              "Guid": "5d099784498e5078803738bd201db326",
+              "ClientRectangle": "9.8,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "ExpCarat"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "HeaderDT_CRT_DIF",
+              "Guid": "2a1460d04f0ed72b3fdcdcac6994907e",
+              "ClientRectangle": "14.8,0,2.3,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "BrkPcs"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "HeaderDT_DIF",
+              "Guid": "efc8cf221d69b22c9de875aeeccf71a0",
+              "ClientRectangle": "17.1,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Brk($)"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "HeaderDT_TYPE",
+              "Guid": "8bdaebfcc9651971d64d0f6f012fd4f2",
+              "ClientRectangle": "19.6,0,2.3,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Type"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "HeaderDT_EMPSAL",
+              "Guid": "112541ac9e4dd5982ee565c057bc9d5c",
+              "ClientRectangle": "21.9,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "EmpSal"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "HeaderDT_WSALARY",
+              "Guid": "df41df7d23cebe64a2f3264a7d373e65",
+              "ClientRectangle": "24.4,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "WSal"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "10": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "6b5337fd3e1d9e778106c40b303110b5",
+              "ClientRectangle": "12.3,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Exp%"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            }
+          }
+        },
+        "3": {
+          "Ident": "StiDataBand",
+          "Name": "DataDT",
+          "ClientRectangle": "0,4.6,28,0.5",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "DataDT_M_CODE",
+              "Guid": "e00a1d2f52a19828860b20ce9d5daa6b",
+              "CanGrow": true,
+              "ClientRectangle": "0,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.M_CODE}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "DataDT_EMP_NAME",
+              "Guid": "9f835de5cbd9130b6955683ee0b89d1d",
+              "CanGrow": true,
+              "ClientRectangle": "2.5,0,2.3,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.EMP_NAME}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "DataDT_MPCS",
+              "Guid": "e4827ccf050ac706a819976a6bd93be3",
+              "CanGrow": true,
+              "ClientRectangle": "4.8,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.MPCS}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "DataDT_MCRT",
+              "Guid": "777e919b8f2940afc62e682c277eaea9",
+              "CanGrow": true,
+              "ClientRectangle": "7.3,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.MCRT}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "DataDT_EXPCRT",
+              "Guid": "d2b1c034fb5a8f1e460e8beacc18f146",
+              "CanGrow": true,
+              "ClientRectangle": "9.8,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.EXPCRT}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "DataDT_CRT_DIF",
+              "Guid": "fc64c381d74ecb0c1145b965a0dc5f32",
+              "CanGrow": true,
+              "ClientRectangle": "14.8,0,2.3,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.CRT_DIF}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "DataDT_DIF",
+              "Guid": "ade2e8e2ac030d5c95116ee84d6b0794",
+              "CanGrow": true,
+              "ClientRectangle": "17.1,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.DIF}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "DataDT_TYPE",
+              "Guid": "0803fac470d6aed3672cb7e659a74b50",
+              "CanGrow": true,
+              "ClientRectangle": "19.6,0,2.3,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.TYPE}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "DataDT_EMPSAL",
+              "Guid": "cabd2ddaa39c598a9b02e9347bc8704a",
+              "CanGrow": true,
+              "ClientRectangle": "21.9,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.EMPSAL}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "DataDT_WSALARY",
+              "Guid": "975fb9fce900a63115833c3b30e13663",
+              "CanGrow": true,
+              "ClientRectangle": "24.4,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.WSALARY}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "10": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "Guid": "99ebc3ef8d91a967a3120c413c0e00af",
+              "ClientRectangle": "12.3,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{DT.DT_EXP}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "empty",
+              "TextBrush": "solid:0,0,0",
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "GroupSeparator": ",",
+                "UseGroupSeparator": false
+              }
+            }
+          },
+          "DataSourceName": "DT"
+        },
+        "4": {
+          "Ident": "StiGroupFooterBand",
+          "Name": "GroupFooterBand1",
+          "ClientRectangle": "0,5.9,28,0.5",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "Guid": "d49b1395f8c6f30280855a2a0d69d6f8",
+              "ClientRectangle": "0,0,4.8,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Total"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text4",
+              "Guid": "f793143cf4bb4130df39927fa07229d1",
+              "CanGrow": true,
+              "ClientRectangle": "4.8,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.MPCS)}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Totals"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "09e1104b7ce83fdade2b57da58a2a4ca",
+              "CanGrow": true,
+              "ClientRectangle": "7.3,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.MCRT)}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Totals"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "fa26f1454b4c2c6836166349442cfdc0",
+              "CanGrow": true,
+              "ClientRectangle": "9.8,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.EXPCRT)}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Totals"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text7",
+              "Guid": "0f8087ef0bd9534f85c7c100a194a550",
+              "CanGrow": true,
+              "ClientRectangle": "14.8,0,2.3,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.CRT_DIF)}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Totals"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text8",
+              "Guid": "1baa133e4d2645b60161375d02cd88bd",
+              "CanGrow": true,
+              "ClientRectangle": "17.1,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.DIF)}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Totals"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text10",
+              "Guid": "b7fad38e17c136f28cb6a65bfc671b05",
+              "CanGrow": true,
+              "ClientRectangle": "21.9,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.EMPSAL)}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Totals"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text11",
+              "Guid": "f0089fac8054c9ce14cc84cdbbda710f",
+              "CanGrow": true,
+              "ClientRectangle": "24.4,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.WSALARY)}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Totals"
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "Text9",
+              "Guid": "d0664f571f967efcd857e55dc12fc912",
+              "CanGrow": true,
+              "ClientRectangle": "12.3,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{IIF((Sum(DT.MCRT) != 0 && Sum(DT.EXPCRT) != 0), (Sum(DT.EXPCRT) / Sum(DT.MCRT)) * 100 )} \r\n{IIF((Sum(DT.MCRT) == 0 && Sum(DT.EXPCRT) == 0), 0.00 )}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "GroupSeparator": ",",
+                "State": "DecimalDigits"
+              },
+              "Type": "Expression"
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "Text19",
+              "Guid": "34d8b9e3f74681b0c7ef6fc53fe3e26a",
+              "ClientRectangle": "19.6,0,2.3,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            }
+          }
+        },
+        "5": {
+          "Ident": "StiFooterBand",
+          "Name": "FooterBand1",
+          "ClientRectangle": "0,7.2,28,0.5",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text13",
+              "Guid": "dc7424a59ba3d4e16d35237e0d54b5ae",
+              "ClientRectangle": "0,0,4.8,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Total"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text14",
+              "Guid": "7a28590429750de7e2697d6771d25070",
+              "CanGrow": true,
+              "ClientRectangle": "4.8,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.MPCS)}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Totals"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text15",
+              "Guid": "c21f7b8b28b10c0ea70ecb702d1a93b6",
+              "CanGrow": true,
+              "ClientRectangle": "7.3,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.MCRT)}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Totals"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text16",
+              "Guid": "af2987334ab17fb20588b3efa4656cc3",
+              "CanGrow": true,
+              "ClientRectangle": "9.8,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.EXPCRT)}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Totals"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text17",
+              "Guid": "aca7b37bffdd5f21395cf2e9d15904e6",
+              "CanGrow": true,
+              "ClientRectangle": "14.8,0,2.3,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.CRT_DIF)}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Totals"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text18",
+              "Guid": "09d27150169c1b93a5f45769964ae45a",
+              "CanGrow": true,
+              "ClientRectangle": "17.1,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.DIF)}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Totals"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text20",
+              "Guid": "9bdc719cbb5c49e5ba2e53efd59b86fd",
+              "CanGrow": true,
+              "ClientRectangle": "21.9,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.EMPSAL)}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Totals"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text21",
+              "Guid": "bed21e8ea5aadb54650eb813d6b3519e",
+              "CanGrow": true,
+              "ClientRectangle": "24.4,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataDT,DT.WSALARY)}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Totals"
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "Text12",
+              "Guid": "4b7169190df8c659407dddb7b51aebd2",
+              "CanGrow": true,
+              "ClientRectangle": "12.3,0,2.5,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{IIF((Sum(DT.MCRT) != 0 && Sum(DT.EXPCRT) != 0), (Sum(DT.EXPCRT) / Sum(DT.MCRT)) * 100 )} \r\n{IIF((Sum(DT.MCRT) == 0 && Sum(DT.EXPCRT) == 0), 0.00 )}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "GroupSeparator": ",",
+                "UseGroupSeparator": false
+              },
+              "Type": "Expression"
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "Text22",
+              "Guid": "490a40bccbb88df159597612faefc654",
+              "ClientRectangle": "19.6,0,2.3,0.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:191,191,191",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            }
+          }
+        }
+      },
+      "Orientation": "Landscape",
+      "PageWidth": 30,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}
