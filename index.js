@@ -26,8 +26,6 @@ const port = process.env.MAIN_PORT
 var conn = require("./Config/db/sql")
 var app = express();
 
-// For Live
-// const httpsServer = https.createServer(httpsOptions, app);
 
 var routes = require("./routes")
 
@@ -67,27 +65,33 @@ app.listen(port, () => {
 })
 
 
+
+
+// app.post('/send-notification', (req, res) => {
+// 	console.log(req.body)
+// 	const notify = { data: req.body };
+// 	socket.emit('notification', notify);
+// 	res.send(notify);
+// });
+
+// const server = app.listen(port, process.env.DOMAIN_IP, () => {
+// 	console.log(`Server connection on ${process.env.DOMAIN_IP}:${port}`);
+// });
+// const socket = require('socket.io')(server, {
+// 	cors: { origin: "*" },
+// 	path: '/socket.io',
+// 	transports: ['websocket', 'polling'],
+// 	secure: true,
+// });
+// socket.on('connection', socket => {
+// });
+
+
+// For Live
+// const httpsServer = https.createServer(httpsOptions, app);
+
 //For Live
 // httpsServer.listen(port, 'api.tender.peacocktech.in');
-
-app.post('/send-notification', (req, res) => {
-	console.log(req.body)
-	const notify = { data: req.body };
-	socket.emit('notification', notify);
-	res.send(notify);
-});
-
-const server = app.listen(port, process.env.DOMAIN_IP, () => {
-	console.log(`Server connection on ${process.env.DOMAIN_IP}:${port}`);
-});
-const socket = require('socket.io')(server, {
-	cors: { origin: "*" },
-	path: '/socket.io',
-	transports: ['websocket', 'polling'],
-	secure: true,
-});
-socket.on('connection', socket => {
-});
 
 var packageJson = require('./package.json');
 console.log(packageJson.version);
