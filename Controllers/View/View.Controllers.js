@@ -43,7 +43,8 @@ exports.PricingWrkDisp = async (req, res) => {
             try {
                 var request = new sql.Request();
 
-                request.input('T_DATE', sql.DateTime2, new Date(req.body.T_DATE))
+                if(req.body.F_DATE){request.input('T_DATE', sql.DateTime2, new Date(req.body.T_DATE))}
+                if(req.body.T_DATE){request.input('F_DATE', sql.DateTime2, new Date(req.body.F_DATE))}
                 request.input('S_CODE', sql.VarChar(7991), req.body.S_CODE)
                 request.input('C_CODE', sql.VarChar(7991), req.body.C_CODE)
                 request.input('Q_CODE', sql.VarChar(7991), req.body.Q_CODE)
@@ -114,6 +115,35 @@ exports.BVView = async (req, res) => {
 
                 if (request.recordset) {
                     res.json({ success: 1, data: request.recordsets })
+                } else {
+                    res.json({ success: 0, data: "Not Found" })
+                }
+
+            } catch (err) {
+                res.json({ success: 0, data: err })
+            }
+        }
+    });
+}
+
+exports.BidDataView = async (req, res) => {
+
+    jwt.verify(req.token, _tokenSecret, async (err, authData) => {
+        if (err) {
+            res.sendStatus(401);
+        } else {
+            const TokenData = await authData;
+
+            try {
+                var request = new sql.Request();
+
+                request.input('COMP_CODE', sql.VarChar(10), req.body.COMP_CODE)
+                request.input('DETID', sql.Int, parseInt(req.body.DETID))
+                
+                request = await request.execute('VW_BidDataView');
+
+                if (request.recordset) {
+                    res.json({ success: 1, data: request.recordset })
                 } else {
                     res.json({ success: 0, data: "Not Found" })
                 }
