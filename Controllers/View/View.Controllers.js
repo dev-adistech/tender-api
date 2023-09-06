@@ -16,6 +16,11 @@ exports.PricingWrk = async (req, res) => {
 
                 if(req.body.F_DATE){request.input('F_DATE', sql.DateTime2, new Date(req.body.F_DATE))}
                 if(req.body.T_DATE){request.input('T_DATE', sql.DateTime2, new Date(req.body.T_DATE))}
+                request.input('S_CODE', sql.VarChar(7991), req.body.S_CODE)
+                request.input('C_CODE', sql.VarChar(7991), req.body.C_CODE)
+                request.input('Q_CODE', sql.VarChar(7991), req.body.Q_CODE)
+                request.input('F_CARAT', sql.Numeric(10,3), req.body.F_CARAT)
+                request.input('T_CARAT', sql.Numeric(10,3), req.body.T_CARAT)
                 
                 request = await request.execute('VW_PricingWrk');
 

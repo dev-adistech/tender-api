@@ -79,3 +79,81 @@ exports.FloMastDelete = async (req, res) => {
         }
     });
 }
+
+
+exports.FloMastsmipleFill = async (req, res) => {
+
+    jwt.verify(req.token, _tokenSecret, async (err, authData) => {
+        if (err) {
+            res.sendStatus(401);
+        } else {
+            const TokenData = await authData;
+
+            try {
+                var request = new sql.Request();
+
+                request = await request.execute('USP_FloMastFill');
+
+
+                if (request.recordset) {
+                    res.json({ success: 1, data: request.recordset })
+                } else {
+                    res.json({ success: 0, data: "Not Found" })
+                }
+
+            } catch (err) {
+                res.json({ success: 0, data: err })
+            }
+        }
+    });
+}
+
+exports.FloMastsmipleSave = async (req, res) => {
+
+    jwt.verify(req.token, _tokenSecret, async (err, authData) => {
+        if (err) {
+            res.sendStatus(401);
+        } else {
+            const TokenData = await authData;
+
+            try {
+                var request = new sql.Request();
+
+                request.input('FL_CODE', sql.Int, parseInt(req.body.FL_CODE))
+                request.input('FL_NAME', sql.VarChar(16), req.body.FL_NAME)
+                request.input('ORD', sql.Int, parseInt(req.body.FL_ORD))
+
+                request = await request.execute('USP_FloMastSave');
+
+                res.json({ success: 1, data: '' })
+
+            } catch (err) {
+                res.json({ success: 0, data: err })
+            }
+        }
+    });
+}
+
+exports.FloMastsmipleDelete = async (req, res) => {
+
+    jwt.verify(req.token, _tokenSecret, async (err, authData) => {
+        if (err) {
+            res.sendStatus(401);
+        } else {
+            const TokenData = await authData;
+
+            try {
+                var request = new sql.Request();
+
+                if (req.body.FL_CODE) { request.input('FL_CODE', sql.Int, parseInt(req.body.FL_CODE)) }
+
+                request = await request.execute('USP_FloMastDelete');
+
+                res.json({ success: 1, data: '' })
+
+            } catch (err) {
+                res.json({ success: 0, data: err })
+            }
+        }
+    });
+}
