@@ -50,7 +50,7 @@ exports.FindRap = async (req, res) => {
           request.input("FL_CODE", sql.Int, parseInt(req.body.FL_CODE));
           request.input("IN_CODE", sql.Int, parseInt(req.body.IN_CODE));
           request.input("RTYPE", sql.VarChar(5), req.body.RTYPE);
-          // request.input("MPER", sql.Int, req.body.MPER);
+          request.input("ML_CODE", sql.Int, req.body.ML_CODE);
           
           
           request = await request.execute("USP_FindRap");
