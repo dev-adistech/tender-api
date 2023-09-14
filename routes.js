@@ -18,6 +18,8 @@ var LotUtility = require('./Routes/ConfigMast/LotUtility')
 var Dashboard = require('./Routes/Dashboard/Dashboard')
 
 var ColMast = require('./Routes/Master/ColMast')
+var ShdMast = require('./Routes/Master/ShdMast')
+var RefMast = require('./Routes/Master/RefMast')
 var tenMast = require('./Routes/Master/tenMast')
 var MacColMast = require('./Routes/Master/MacColMast')
 var CutMast = require('./Routes/Master/CutMast')
@@ -70,6 +72,8 @@ router.use('/LotUtility', LotUtility);
 router.use('/Dashboard', Dashboard);
 
 router.use('/ColMast', ColMast);
+router.use('/ShdMast', ShdMast);
+router.use('/RefMast', RefMast);
 router.use('/tenMast', tenMast);
 router.use('/CutMast', CutMast);
 router.use('/FloMast', FloMast);

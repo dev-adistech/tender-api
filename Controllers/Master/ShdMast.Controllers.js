@@ -41,7 +41,7 @@ exports.ShdMastSave = async (req, res) => {
                 var request = new sql.Request();
 
                 request.input('SH_CODE', sql.Int, parseInt(req.body.SH_CODE))
-                request.input('SH_NAME', sql.VarChar(16), req.body.SH_NAME)
+                request.input('SH_NAME', sql.VarChar(50), req.body.SH_NAME)
                 request.input('ORD', sql.Int, parseInt(req.body.ORD))
 
                 request = await request.execute('USP_ShdMastSave');
@@ -66,7 +66,7 @@ exports.ShdMastDelete = async (req, res) => {
             try {
                 var request = new sql.Request();
 
-                if (req.body.SH_CODE) { request.input('SH_CODE', sql.Int, parseInt(req.body.SH_CODE)) }
+                request.input('SH_CODE', sql.Int, parseInt(req.body.SH_CODE))
 
                 request = await request.execute('USP_ShdMastDelete');
 

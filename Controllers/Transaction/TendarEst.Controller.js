@@ -50,7 +50,10 @@ exports.FindRap = async (req, res) => {
           request.input("FL_CODE", sql.Int, parseInt(req.body.FL_CODE));
           request.input("IN_CODE", sql.Int, parseInt(req.body.IN_CODE));
           request.input("RTYPE", sql.VarChar(5), req.body.RTYPE);
+          request.input("RAPTYPE", sql.VarChar(5), req.body.RAPTYPE);
           request.input("ML_CODE", sql.Int, req.body.ML_CODE);
+          request.input("SH_CODE", sql.Int, req.body.SH_CODE);
+          request.input("REF_CODE", sql.Int, req.body.REF_CODE);
           
           
           request = await request.execute("USP_FindRap");
@@ -115,6 +118,9 @@ exports.FindRap = async (req, res) => {
                     request.input('RAT_CODE', sql.Numeric(10,2), PerArr[i].RAT_CODE)
                     request.input('GRD_CODE', sql.Numeric(10,2), PerArr[i].GRD_CODE)
                     request.input('MPER', sql.Numeric(10,2), PerArr[i].MPER)
+                    request.input('SH_CODE', sql.Int, PerArr[i].SH_CODE)
+                    request.input('REF_CODE', sql.Int, PerArr[i].REF_CODE)
+                    request.input('RAPTYPE', sql.VarChar(5), PerArr[i].RAPTYPE)
 
                     request = await request.execute('USP_TendarPrdDetSave');
                 } catch (err) {
@@ -298,6 +304,7 @@ exports.TendarResSave = async (req, res) => {
         request.input("PCOMP", sql.VarChar(30), IP);
         request.input("TEN_NAME",sql.VarChar(50),req.body.TEN_NAME)
         request.input("ADIS",sql.Numeric(10,2),req.body.ADIS)
+        request.input("FAMT",sql.Numeric(10,2),req.body.FAMT)
 
         request = await request.execute("USP_TendarResSave");
 
