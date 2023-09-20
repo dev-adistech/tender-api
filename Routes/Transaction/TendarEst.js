@@ -15,5 +15,6 @@ router.post('/TendarPrdDetDock', verifyToken, _TendarEst.TendarPrdDetDock)
 router.post('/TendarResSave', verifyToken, _TendarEst.TendarResSave)
 router.post('/TendarApprove', verifyToken, _TendarEst.TendarApprove)
 router.post('/TendarVidUploadDisp', verifyToken, _TendarEst.TendarVidUploadDisp)
+router.post('/fileUpload',  _TendarEst.fileUpload)
 
 module.exports = router;

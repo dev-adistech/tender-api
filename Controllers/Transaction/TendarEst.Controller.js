@@ -144,6 +144,10 @@ exports.TendarVidUpload = async (req, res) => {
       try {
         var request = new sql.Request();
 
+        if(req.body.uploadedPicName){
+          await azureUpload(req.body.uploadedPicName,req.body.uploadedPicExt)
+      }
+
         let IP = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
 
         request.input("COMP_CODE", sql.VarChar(10), req.body.COMP_CODE);
@@ -315,6 +319,8 @@ exports.TendarResSave = async (req, res) => {
     }
   });
 };
+
+
 exports.TendarApprove = async (req, res) => {
   jwt.verify(req.token, _tokenSecret, async (err, authData) => {
     if (err) {
@@ -373,5 +379,57 @@ exports.TendarVidUploadDisp = async (req, res) => {
               res.json({ success: 0, data: err })
           }
       }
+  });
+}
+
+
+exports.fileUpload = async (req, res) => {
+
+
+  let fileNameAry = [];
+   
+  var multer = require('multer');
+  const storage = multer.diskStorage({
+      destination: "public/Sarine",
+      filename: function(req, file, cb){
+          let fileName = file.originalname;
+          fileNameAry.push(fileName)
+          cb(null, fileName)
+      }
+  });
+
+  const upload = multer({ storage: storage }).fields([{name:"Pic"}]);
+
+  upload(req, res, (err) => {
+
+      res.json(fileNameAry)
+      if (err) throw err;
+  });
+};
+
+function azureUpload(name,ext) {
+  const azureStorage = require('azure-storage')
+  const blobService = azureStorage.createBlobService()
+  const containerName = 'hdfile'
+  const path = require('path');
+  const fs = require('fs')
+
+
+  const azureImagePath = 'Sarine/'+name;
+  const nodeImagePath = path.join(__dirname, '../../public/Sarine/'+name)
+  return new Promise(function(resolve, reject) {
+      blobService.createBlockBlobFromLocalFile(containerName, azureImagePath, nodeImagePath, function(error, result, response) {
+        console.log('response::',response)
+        console.log('error::',error)
+        console.log('result::',result)
+          try { fs.unlinkSync(nodeImagePath) } catch(err) { console.error(err) }
+
+          if (!error) {
+              resolve();
+          }else{
+            console.log(error)
+              reject();
+          }
+      })
   });
 }
