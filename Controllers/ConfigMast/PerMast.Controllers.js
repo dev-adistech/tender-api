@@ -116,3 +116,25 @@ exports.PerMastCopy = async (req, res) => {
         }
     });
 }
+
+exports.RapTrf = async (req, res) => {
+
+    jwt.verify(req.token, _tokenSecret, async (err, authData) => {
+        if (err) {
+            res.sendStatus(401);
+        } else {
+            const TokenData = await authData;
+
+            try {
+                var request = new sql.Request();
+                
+                request = await request.execute('USP_RapTrf');
+
+                res.json({ success: 1, data: '' })
+
+            } catch (err) {
+                res.json({ success: 0, data: err })
+            }
+        }
+    });
+}

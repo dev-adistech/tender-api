@@ -8,5 +8,6 @@ router.post('/PerMastFill', verifyToken, _perMast.PerMastFill)
 router.post('/PerMastSave', verifyToken, _perMast.PerMastSave)
 router.post('/PerMastDelete', verifyToken, _perMast.PerMastDelete)
 router.post('/PerMastCopy', verifyToken, _perMast.PerMastCopy)
+router.post('/RapTrf', verifyToken, _perMast.RapTrf)
 
 module.exports = router;
