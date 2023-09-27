@@ -5,14 +5,14 @@ const sql_config = {
     password: process.env.DB_PASSWORD,
     server: process.env.DB_SERVER,
     database: process.env.DB_DATABASE,
-    connectionTimeout: 300000,
-    requestTimeout: 300000,
+    connectionTimeout: 1000000,
+    requestTimeout: 1000000,
     pool: {
-        idleTimeoutMillis: 300000,
+        idleTimeoutMillis: 1000000,
         max: 100
     },
     dialectOptions: {
-        options: { requestTimeout: 300000 }
+        options: { requestTimeout: 1000000 }
     },
     options: {
         encrypt: false,

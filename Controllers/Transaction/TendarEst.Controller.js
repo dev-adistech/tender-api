@@ -17,6 +17,7 @@ exports.TendarPrdDetDisp = async (req, res) => {
                 request.input('COMP_CODE', sql.VarChar(10), req.body.COMP_CODE)
                 request.input('DETID', sql.Int, parseInt(req.body.DETID))
                 request.input('SRNO', sql.Int, parseInt(req.body.SRNO))
+                request.input('TYPE', sql.VarChar(5), req.body.TYPE)
 
                 request = await request.execute('USP_TendarPrdDetDisp');
 
