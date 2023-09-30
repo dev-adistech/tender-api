@@ -54,6 +54,7 @@ var View = require('./Routes/View/View')
 var TendarCom = require('./Routes/Transaction/TendarCom')
 var TendarMast = require('./Routes/Transaction/TendarMast')
 var TendarEst = require('./Routes/Transaction/TendarEst')
+var LotMap = require('./Routes/Transaction/LotMap')
 
 router.use('/Common', Common);
 router.use('/Dock', Dock);
@@ -104,6 +105,7 @@ router.use('/Report', Report);
 router.use('/TendarCom', TendarCom);
 router.use('/TendarMast', TendarMast);
 router.use('/TendarEst', TendarEst);
+router.use('/LotMap', LotMap);
 
 router.use('/Login', Login);
 
