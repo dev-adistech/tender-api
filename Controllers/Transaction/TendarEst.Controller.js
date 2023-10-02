@@ -312,9 +312,6 @@ exports.TendarResSave = async (req, res) => {
         request.input("FAMT",sql.Numeric(10,2),req.body.FAMT)
 
         request = await request.execute("USP_TendarResSave");
-
-        console.log(req.body)
-
         res.json({ success: 1, data: "" });
       } catch (err) {
         res.json({ success: 0, data: err });
