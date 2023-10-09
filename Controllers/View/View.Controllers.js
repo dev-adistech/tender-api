@@ -159,3 +159,43 @@ exports.BidDataView = async (req, res) => {
         }
     });
 }
+
+exports.ColAnalysis = async (req, res) => {
+
+    jwt.verify(req.token, _tokenSecret, async (err, authData) => {
+        if (err) {
+            res.sendStatus(401);
+        } else {
+            const TokenData = await authData;
+
+            try {
+                var request = new sql.Request();
+
+                request.input('COMP_CODE', sql.VarChar(10), req.body.COMP_CODE)
+                request.input('DETID', sql.Int, parseInt(req.body.DETID))
+                request.input('S_CODE', sql.VarChar(7991), req.body.S_CODE)
+                request.input('C_CODE', sql.VarChar(7991), req.body.C_CODE)
+                request.input('Q_CODE', sql.VarChar(7991), req.body.Q_CODE)
+                request.input('CT_CODE', sql.VarChar(7991), req.body.CT_CODE)
+                request.input('F_CARAT', sql.Numeric(10,3), req.body.F_CARAT)
+                request.input('T_CARAT', sql.Numeric(10,3), req.body.T_CARAT)
+                request.input('FINAL', sql.VarChar(7991), req.body.FINAL)
+                request.input('RESULT', sql.VarChar(7991), req.body.RESULT)
+                request.input('FLNO', sql.VarChar(7991), req.body.FLNO)
+                request.input('MACHFL', sql.VarChar(7991), req.body.MACHFL)
+                request.input('COMENT', sql.VarChar(7991), req.body.COMENT)
+                
+                request = await request.execute('VW_ColAnalysis');
+
+                if (request.recordset) {
+                    res.json({ success: 1, data: request.recordset })
+                } else {
+                    res.json({ success: 0, data: "Not Found" })
+                }
+
+            } catch (err) {
+                res.json({ success: 0, data: err })
+            }
+        }
+    });
+}
