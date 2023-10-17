@@ -55,6 +55,7 @@ exports.PricingWrkDisp = async (req, res) => {
                 request.input('Q_CODE', sql.VarChar(7991), req.body.Q_CODE)
                 request.input('F_CARAT', sql.Numeric(10,3), req.body.F_CARAT)
                 request.input('T_CARAT', sql.Numeric(10,3), req.body.T_CARAT)
+                request.input('COMP_CODE', sql.VarChar(10), req.body.COMP_CODE)
 
                 
                 request = await request.execute('VW_PricingWrkDisp');
