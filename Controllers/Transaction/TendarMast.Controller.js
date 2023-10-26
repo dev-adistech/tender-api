@@ -76,6 +76,7 @@ exports.TendarMastSave = async (req, res) => {
                 request.input('ICOMP', sql.VarChar(30), IP)
                 request.input('T_NAME', sql.VarChar(50), req.body.T_NAME)
                 request.input('ISACTIVE',sql.Bit,req.body.ISACTIVE)
+                request.input('ISMIX',sql.Bit,req.body.ISMIX)
                 
 
                 request = await request.execute('USP_TendarMastSave');
