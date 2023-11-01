@@ -48,4 +48,27 @@ async function msgServerconn(){
     return msgServer
 }
 
-module.exports = { RapServerConn, msgServerconn }
+async function preServerconn(){
+    var MsgConn = {
+        user: process.env.DB_USERPRE,
+        password: process.env.DB_PASSWORDPRE,
+        server: process.env.DB_SERVERPRE,
+        database: process.env.DB_DATABASEPRE,
+        connectionTimeout: 3000000,
+        requestTimeout: 3000000,
+
+        options: {
+            encrypt: true,
+            enableArithAbort: true,
+            useUTC: true,
+        },
+        port: parseInt(process.env.DB_PORT),
+    }
+
+    const msgServer = await new sql.ConnectionPool(MsgConn).connect().then().catch(err =>
+        console.log('Database Connection Failed! Bad Config: ', err))
+
+    return msgServer
+}
+
+module.exports = { RapServerConn, msgServerconn,preServerconn }

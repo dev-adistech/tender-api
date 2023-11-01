@@ -49,6 +49,7 @@ var RapShdDisc = require('./Routes/Rap/RapShdDisc')
 var Report = require('./Routes/Report/Report')
 
 var Login = require('./Routes/Utility/Login')
+var getcerti = require('./Routes/Utility/getcerti')
 
 var View = require('./Routes/View/View')
 var TendarCom = require('./Routes/Transaction/TendarCom')
@@ -108,6 +109,7 @@ router.use('/TendarEst', TendarEst);
 router.use('/LotMap', LotMap);
 
 router.use('/Login', Login);
+router.use('/getcerti', getcerti);
 
 router.use('/View', View);
 
