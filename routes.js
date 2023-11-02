@@ -18,6 +18,7 @@ var LotUtility = require('./Routes/ConfigMast/LotUtility')
 var Dashboard = require('./Routes/Dashboard/Dashboard')
 
 var ColMast = require('./Routes/Master/ColMast')
+var SelldaysMast = require('./Routes/Master/SelldaysMast')
 var ShdMast = require('./Routes/Master/ShdMast')
 var RefMast = require('./Routes/Master/RefMast')
 var tenMast = require('./Routes/Master/tenMast')
@@ -74,6 +75,7 @@ router.use('/LotUtility', LotUtility);
 router.use('/Dashboard', Dashboard);
 
 router.use('/ColMast', ColMast);
+router.use('/SelldaysMast', SelldaysMast);
 router.use('/ShdMast', ShdMast);
 router.use('/RefMast', RefMast);
 router.use('/tenMast', tenMast);
