@@ -21,6 +21,7 @@ exports.PricingWrk = async (req, res) => {
                 request.input('Q_CODE', sql.VarChar(7991), req.body.Q_CODE)
                 request.input('F_CARAT', sql.Numeric(10,3), req.body.F_CARAT)
                 request.input('T_CARAT', sql.Numeric(10,3), req.body.T_CARAT)
+                request.input('COMP_CODE', sql.VarChar(10), req.body.COMP_CODE)
                 
                 request = await request.execute('VW_PricingWrk');
 
@@ -90,6 +91,7 @@ exports.PricingWrkDisp = async (req, res) => {
                 request.input('F_CARAT', sql.Numeric(10,3), req.body.F_CARAT)
                 request.input('T_CARAT', sql.Numeric(10,3), req.body.T_CARAT)
                 request.input('COMP_CODE', sql.VarChar(10), req.body.COMP_CODE)
+                request.input('DETID', sql.Int, req.body.DETID)
 
                 
                 request = await request.execute('VW_PricingWrkDisp');
@@ -125,6 +127,7 @@ exports.ParcelWrkDisp = async (req, res) => {
                 request.input('Q_CODE', sql.VarChar(7991), req.body.Q_CODE)
                 request.input('F_CARAT', sql.Numeric(10,3), req.body.F_CARAT)
                 request.input('T_CARAT', sql.Numeric(10,3), req.body.T_CARAT)
+                request.input('DETID', sql.Int, req.body.DETID)
                 if(req.body.COMP_CODE){request.input('COMP_CODE', sql.VarChar(10), req.body.COMP_CODE)}
 
                 
@@ -153,6 +156,7 @@ exports.PricingWrkMperSave = async (req, res) => {
 
             try {
                 var request = new sql.Request();
+                let IP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
                 request.input('MPER', sql.Numeric(10,3), req.body.MPER)
                 request.input('COMP_CODE', sql.VarChar(10), req.body.COMP_CODE)
@@ -160,6 +164,8 @@ exports.PricingWrkMperSave = async (req, res) => {
                 request.input('SRNO', sql.Int, parseInt(req.body.SRNO))
                 request.input('PLANNO', sql.Int, parseInt(req.body.PLANNO))
                 request.input('PTAG', sql.VarChar(2), req.body.PTAG)
+                request.input('MUSER', sql.VarChar(20), req.body.MUSER)
+                request.input('MCOMP', sql.VarChar(30), IP)
 
                 
                 request = await request.execute('VW_PricingWrkMperSave');
