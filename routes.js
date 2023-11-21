@@ -51,6 +51,7 @@ var Report = require('./Routes/Report/Report')
 
 var Login = require('./Routes/Utility/Login')
 var getcerti = require('./Routes/Utility/getcerti')
+var rateupdate = require('./Routes/Utility/rateupdate')
 
 var View = require('./Routes/View/View')
 var TendarCom = require('./Routes/Transaction/TendarCom')
@@ -112,6 +113,7 @@ router.use('/LotMap', LotMap);
 
 router.use('/Login', Login);
 router.use('/getcerti', getcerti);
+router.use('/rateupdate', rateupdate);
 
 router.use('/View', View);
 
