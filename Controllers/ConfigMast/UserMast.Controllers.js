@@ -21,6 +21,7 @@ exports.UserMastSave = async (req, res) => {
                 request.input('U_CAT', sql.VarChar(8), req.body.U_CAT)
                 request.input('IP', sql.VarChar(25), req.body.IP)
                 request.input('ISACCESS', sql.Bit, req.body.ISACCESS)
+                request.input('EMAIL', sql.VarChar(100), req.body.EMAIL)
 
                 request = await request.execute('USP_UserMastSave');
 

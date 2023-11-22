@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var Common = require('./Routes/Common/Common')
+var nodemailer = require('./Routes/Common/nodemailer')
 var Dock = require('./Routes/Common/Dock')
 
 var FrmMast = require('./Routes/ConfigMast/FrmMast')
@@ -60,6 +61,7 @@ var TendarEst = require('./Routes/Transaction/TendarEst')
 var LotMap = require('./Routes/Transaction/LotMap')
 
 router.use('/Common', Common);
+router.use('/nodemailer', nodemailer);
 router.use('/Dock', Dock);
 
 router.use('/FrmMast', FrmMast);

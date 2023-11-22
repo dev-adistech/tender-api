@@ -1,8 +1,13 @@
 var CryptoJS = require("crypto-js");
 const jwt = require("jsonwebtoken");
 const sql = require("mssql");
+var nodemailer = require('nodemailer');
+var fs = require('fs');
+let ejs = require("ejs");
+const path = require("path")
 
 const { _tokenSecret } = require("./../../Config/token/TokenConfig.json");
+const { sendHtml } = require('./../Common/nodemailer.Controllers');
 
 exports.LoginAuthentication = async (req, res) => {
 
@@ -46,7 +51,8 @@ exports.LoginAuthentication = async (req, res) => {
               U_CAT: request.recordset[0].U_CAT,
               PROC_CODE: request.recordset[0].PROC_CODE,
               DEPT_CODE: request.recordset[0].DEPT_CODE,
-              PNT: request.recordset[0].PNT
+              PNT: request.recordset[0].PNT,
+              EMAIL: request.recordset[0].EMAIL
             }, _tokenSecret, { expiresIn: "12h" }, (err, token) => {
               res.json({ success: 1, data: token })
             });
@@ -62,7 +68,8 @@ exports.LoginAuthentication = async (req, res) => {
             U_CAT: request.recordset[0].U_CAT,
             PROC_CODE: request.recordset[0].PROC_CODE,
             DEPT_CODE: request.recordset[0].DEPT_CODE,
-            PNT: request.recordset[0].PNT
+            PNT: request.recordset[0].PNT,
+            EMAIL: request.recordset[0].EMAIL,
           }, _tokenSecret, { expiresIn: "12h" }, (err, token) => {
             res.json({ success: 1, data: token })
           });
@@ -131,3 +138,43 @@ exports.UserFrmPer = async (req, res) => {
     }
   });
 }
+
+const crypt = (salt, text) => {
+  const textToChars = (text) => text.split("").map((c) => c.charCodeAt(0));
+  const byteHex = (n) => ("0" + Number(n).toString(16)).substr(-2);
+  const applySaltToChar = (code) => textToChars(salt).reduce((a, b) => a ^ b, code);
+
+  return text
+    .split("")
+    .map(textToChars)
+    .map(applySaltToChar)
+    .map(byteHex)
+    .join("");
+};
+
+exports.EmailSendOTP = async(req,res) => {
+  try{
+
+      var val = Math.floor(100000 + Math.random() * 900000);
+      let TemplateOTP = { OTP:val, year:new Date().getFullYear() , USERID:req.body.USERID};
+      // console.log(TemplateOTP)
+      let OTPRes = await sendHtml(req.body.EMAIL, path.join(__dirname, "../../Public/MailTemplate/CRMOTP.ejs") ,TemplateOTP,'Tendar - OTP '+val )
+      // var request = new sql.Request();
+      // console.log('====>',OTPRes)
+      // request.input('USERID', sql.VarChar(20), req.body.USERID)
+      // request.input('EMAIL', sql.VarChar(100), req.body.EMAIL)
+      // request.input('OTP', sql.Int, val)
+
+      // request = await request.execute('USP_UserMastOTPSave');
+      
+      // console.log('!@#$%^&*',OTPRes)
+
+      res.json({success:OTPRes,data: crypt(process.env.PASS_KEY, val.toString()) })
+  
+  }catch(err){
+    console.log(err)
+      res.json({success:0,data:err})
+  }
+}
+
+
