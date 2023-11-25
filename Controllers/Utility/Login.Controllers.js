@@ -37,14 +37,59 @@ exports.LoginAuthentication = async (req, res) => {
         }
 
         if (USER_IP && MACHINE_IP !== USER_IP) {
-          // console.log(`FOUND ${USER_IP}.`)
-          // console.log(`COMAPRED ${USER_IP} AND ${MACHINE_IP}.`)
           res.json({ success: 6, data: `${request.recordset[0].USERID} can not login from this IP address.` })
         } else if (request.recordset[0].LINK == req.body.LINK) {
           if (!request.recordset[0].ISACCESS) {
 
             res.json({ success: 6, data: `${request.recordset[0].USERID} can not login from this url` })
           } else if (originalText == req.body.PASS) {
+            if (req.body.BASEURL != 'api.tender.peacocktech.in') {
+              jwt.sign({
+                UserId: request.recordset[0].USERID,
+                USER_FULLNAME: request.recordset[0].USER_FULLNAME,
+                U_CAT: request.recordset[0].U_CAT,
+                PROC_CODE: request.recordset[0].PROC_CODE,
+                DEPT_CODE: request.recordset[0].DEPT_CODE,
+                PNT: request.recordset[0].PNT,
+                EMAIL: request.recordset[0].EMAIL
+              }, _tokenSecret, { expiresIn: "12h" }, (err, token) => {
+                res.json({ success: 1, data: token })
+              });
+            } else {
+              var CheckUuidReq = new sql.Request();
+
+              CheckUuidReq.input('USERID', sql.VarChar(32), req.body.USERID)
+              CheckUuidReq.input('IPADDRESS', sql.VarChar(64), MACHINE_IP)
+              CheckUuidReq.input('MACADDRESS', sql.VarChar(128), req.body.uuid)
+              CheckUuidReq.input('COMPUTERNAME', sql.VarChar(512), req.body.COMPUTERNAME)
+
+              CheckUuidReq = await CheckUuidReq.execute('usp_UserLoginPermissionCheckIP');
+
+              if (CheckUuidReq.recordset) {
+                if (CheckUuidReq.recordset[0].ISACTIVE == true) {
+                  jwt.sign({
+                    UserId: request.recordset[0].USERID,
+                    USER_FULLNAME: request.recordset[0].USER_FULLNAME,
+                    U_CAT: request.recordset[0].U_CAT,
+                    PROC_CODE: request.recordset[0].PROC_CODE,
+                    DEPT_CODE: request.recordset[0].DEPT_CODE,
+                    PNT: request.recordset[0].PNT,
+                    EMAIL: request.recordset[0].EMAIL
+                  }, _tokenSecret, { expiresIn: "12h" }, (err, token) => {
+                    res.json({ success: 1, data: token })
+                  });
+                } else {
+                  res.json({ success: 10, data: "Access denied." })
+                }
+              }
+            }
+          } else {
+            res.json({ success: 3, data: "Password wrong" })
+          }
+
+        }
+        else if (originalText == req.body.PASS) {
+          if (req.body.BASEURL != 'api.tender.peacocktech.in') {
             jwt.sign({
               UserId: request.recordset[0].USERID,
               USER_FULLNAME: request.recordset[0].USER_FULLNAME,
@@ -52,27 +97,37 @@ exports.LoginAuthentication = async (req, res) => {
               PROC_CODE: request.recordset[0].PROC_CODE,
               DEPT_CODE: request.recordset[0].DEPT_CODE,
               PNT: request.recordset[0].PNT,
-              EMAIL: request.recordset[0].EMAIL
+              EMAIL: request.recordset[0].EMAIL,
             }, _tokenSecret, { expiresIn: "12h" }, (err, token) => {
               res.json({ success: 1, data: token })
             });
-          } else {
-            res.json({ success: 3, data: "Password wrong" })
+          }else{
+            var CheckUuidReq = new sql.Request();
+                CheckUuidReq.input('USERID', sql.VarChar(32), req.body.USERID)
+                CheckUuidReq.input('IPADDRESS', sql.VarChar(64), MACHINE_IP)
+                CheckUuidReq.input('MACADDRESS', sql.VarChar(128), req.body.uuid)
+                CheckUuidReq.input('COMPUTERNAME', sql.VarChar(512), req.body.COMPUTERNAME)
+  
+                CheckUuidReq = await CheckUuidReq.execute('usp_UserLoginPermissionCheckIP');
+  
+                if (CheckUuidReq.recordset) {
+                  if (CheckUuidReq.recordset[0].ISACTIVE == true) {
+                    jwt.sign({
+                      UserId: request.recordset[0].USERID,
+                      USER_FULLNAME: request.recordset[0].USER_FULLNAME,
+                      U_CAT: request.recordset[0].U_CAT,
+                      PROC_CODE: request.recordset[0].PROC_CODE,
+                      DEPT_CODE: request.recordset[0].DEPT_CODE,
+                      PNT: request.recordset[0].PNT,
+                      EMAIL: request.recordset[0].EMAIL,
+                    }, _tokenSecret, { expiresIn: "12h" }, (err, token) => {
+                      res.json({ success: 1, data: token })
+                    });
+                  } else {
+                    res.json({ success: 10, data: "Access denied." })
+                  }
+                }
           }
-
-        }
-        else if (originalText == req.body.PASS) {
-          jwt.sign({
-            UserId: request.recordset[0].USERID,
-            USER_FULLNAME: request.recordset[0].USER_FULLNAME,
-            U_CAT: request.recordset[0].U_CAT,
-            PROC_CODE: request.recordset[0].PROC_CODE,
-            DEPT_CODE: request.recordset[0].DEPT_CODE,
-            PNT: request.recordset[0].PNT,
-            EMAIL: request.recordset[0].EMAIL,
-          }, _tokenSecret, { expiresIn: "12h" }, (err, token) => {
-            res.json({ success: 1, data: token })
-          });
         } else {
           res.json({ success: 3, data: "Password wrong" })
         }
@@ -138,6 +193,22 @@ exports.UserFrmPer = async (req, res) => {
     }
   });
 }
+exports.GetEmail = async (req, res) => {
+
+      try {
+        var request = new sql.Request();
+
+        request = await request.execute('USP_GetEmail');
+        if (request.recordset) {
+          res.json({ success: 1, data: request.recordsets })
+        } else {
+          res.json({ success: 0, data: "Not Found" })
+        }
+      } catch (err) {
+        console.log(err)
+        res.json({ success: 0, data: err })
+      }
+    }
 
 const crypt = (salt, text) => {
   const textToChars = (text) => text.split("").map((c) => c.charCodeAt(0));
@@ -157,17 +228,10 @@ exports.EmailSendOTP = async(req,res) => {
 
       var val = Math.floor(100000 + Math.random() * 900000);
       let TemplateOTP = { OTP:val, year:new Date().getFullYear() , USERID:req.body.USERID};
-      // console.log(TemplateOTP)
-      let OTPRes = await sendHtml(req.body.EMAIL, path.join(__dirname, "../../Public/MailTemplate/CRMOTP.ejs") ,TemplateOTP,'Tendar - OTP '+val )
-      // var request = new sql.Request();
-      // console.log('====>',OTPRes)
-      // request.input('USERID', sql.VarChar(20), req.body.USERID)
-      // request.input('EMAIL', sql.VarChar(100), req.body.EMAIL)
-      // request.input('OTP', sql.Int, val)
-
-      // request = await request.execute('USP_UserMastOTPSave');
-      
-      // console.log('!@#$%^&*',OTPRes)
+      let OTPRes = false 
+      for(let i =0;i<req.body.EMAIL.length;i++){
+        OTPRes = await sendHtml(req.body.EMAIL[i]['EMAIL'], path.join(__dirname, "../../Public/MailTemplate/CRMOTP.ejs") ,TemplateOTP,'Tendar - OTP '+val )
+      }
 
       res.json({success:OTPRes,data: crypt(process.env.PASS_KEY, val.toString()) })
   

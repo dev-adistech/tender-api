@@ -47,6 +47,7 @@ function sendHtml(email, HtmlPath, templateData, subject) {
                 };
                
                 return credential_transport.sendMail(mailOptions, function (error, info) {
+                    // console.log("error",error)
                     if (error) {
                         resolve(false);
                     } else {

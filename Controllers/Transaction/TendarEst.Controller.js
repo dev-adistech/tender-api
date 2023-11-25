@@ -310,6 +310,9 @@ exports.TendarResSave = async (req, res) => {
         request.input("TEN_NAME",sql.VarChar(50),req.body.TEN_NAME)
         request.input("ADIS",sql.Numeric(10,2),req.body.ADIS)
         request.input("FAMT",sql.Numeric(10,2),req.body.FAMT)
+        request.input("UUSER1", sql.VarChar(20), req.body.UUSER1);
+        request.input("UUSER2", sql.VarChar(20), req.body.UUSER2);
+        request.input("UUSER3", sql.VarChar(20), req.body.UUSER3);
 
         request = await request.execute("USP_TendarResSave");
         res.json({ success: 1, data: "" });

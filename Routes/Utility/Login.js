@@ -9,5 +9,6 @@ router.post('/LoginAuthentication', _login.LoginAuthentication);
 router.post('/EmailSendOTP', _login.EmailSendOTP);
 router.post('/UserFrmOpePer', verifyToken,_login.UserFrmOpePer);
 router.post('/UserFrmPer', verifyToken,_login.UserFrmPer);
+router.post('/GetEmail',_login.GetEmail);
 
 module.exports = router;
