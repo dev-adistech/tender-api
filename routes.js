@@ -60,6 +60,7 @@ var TendarMast = require('./Routes/Transaction/TendarMast')
 var TendarEst = require('./Routes/Transaction/TendarEst')
 var LotMap = require('./Routes/Transaction/LotMap')
 var LoginPermission = require('./Routes/Utility/LoginPermission')
+var RapCalc = require('./Routes/Rap/RapCalc')
 
 router.use('/Common', Common);
 router.use('/nodemailer', nodemailer);
@@ -107,6 +108,7 @@ router.use('/RapMast', RapMast);
 router.use('/RapOrg', RapOrg);
 router.use('/RapParamDisc', RapParamDisc);
 router.use('/RapShdDisc', RapShdDisc);
+router.use('/RapCalc', RapCalc);
 
 router.use('/Report', Report);
 router.use('/TendarCom', TendarCom);
