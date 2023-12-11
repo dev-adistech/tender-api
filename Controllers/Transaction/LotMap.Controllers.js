@@ -47,6 +47,8 @@ exports.LotMappingSave = async (req, res) => {
                 request.input('SRNO', sql.Int, parseInt(req.body.SRNO))
                 request.input('L_CODE', sql.VarChar(5), req.body.L_CODE)
                 request.input('C_SRNO', sql.Int, parseInt(req.body.C_SRNO))
+                request.input('PER', sql.Numeric(10,2), req.body.PER)
+                request.input('ISWIN', sql.Bit, req.body.ISWIN)
 
                 request = await request.execute('USP_LotMappingSave');
 

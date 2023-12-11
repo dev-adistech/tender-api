@@ -197,6 +197,7 @@ exports.GetEmail = async (req, res) => {
 
       try {
         var request = new sql.Request();
+        request.input('IUSER', sql.VarChar(10), req.body.IUSER)
 
         request = await request.execute('USP_GetEmail');
         if (request.recordset) {
@@ -225,14 +226,13 @@ const crypt = (salt, text) => {
 
 exports.EmailSendOTP = async(req,res) => {
   try{
-
       var val = Math.floor(100000 + Math.random() * 900000);
       let TemplateOTP = { OTP:val, year:new Date().getFullYear() , USERID:req.body.USERID};
       let OTPRes = false 
       for(let i =0;i<req.body.EMAIL.length;i++){
         OTPRes = await sendHtml(req.body.EMAIL[i]['EMAIL'], path.join(__dirname, "../../Public/MailTemplate/CRMOTP.ejs") ,TemplateOTP,'Tendar - OTP '+val )
       }
-
+      console.log(val)
       res.json({success:OTPRes,data: crypt(process.env.PASS_KEY, val.toString()) })
   
   }catch(err){
