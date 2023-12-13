@@ -294,7 +294,9 @@ exports.TenderWin = async (req, res) => {
                 var request = new sql.Request();
 
                 request.input('COMP_CODE', sql.VarChar(10), req.body.COMP_CODE)
-                request.input('DETID', sql.Int, parseInt(req.body.DETID))
+                request.input('DETID', sql.VarChar(7991), req.body.DETID)
+                if (req.body.F_DATE) { request.input('F_DATE', sql.DateTime2, new Date(req.body.F_DATE)) }
+                if (req.body.T_DATE) { request.input('T_DATE', sql.DateTime2, new Date(req.body.T_DATE)) }
 
                 request = await request.execute('VW_TenderWin');
 
@@ -593,9 +595,9 @@ exports.TendarWinSheet = async (req, res) => {
 
     Data.forEach(function (record, index) {
         let Lot = ''
-        if(record["I_CARAT"]){
+        if (record["I_CARAT"]) {
             Lot = record["SRNO"]
-        }else{
+        } else {
             Lot = ''
         }
         worksheet1.addRow({
@@ -628,28 +630,27 @@ exports.TendarWinSheet = async (req, res) => {
             USER2: record["U2"],
             USER3: record["U3"],
         });
-
     })
 
     worksheet1.eachRow({ includeEmpty: false }, (row, rowNumber) => {
         if (rowNumber > 7) {
-                row.eachCell({ includeEmpty: true }, (cell, colNumber) => {
-                    if (colNumber !== 1 && row.values[3]) {
-                        cell.border = {
-                            top: { style: 'thin', color: { argb: 'FF000000' } },
-                            left: { style: 'thin', color: { argb: 'FF000000' } },
-                            bottom: { style: 'thin', color: { argb: 'FF000000' } },
-                            right: { style: 'thin', color: { argb: 'FF000000' } },
-                        };
-                    }
-                });
-            
+            row.eachCell({ includeEmpty: true }, (cell, colNumber) => {
+                if (colNumber !== 1 && row.values[3]) {
+                    cell.border = {
+                        top: { style: 'thin', color: { argb: 'FF000000' } },
+                        left: { style: 'thin', color: { argb: 'FF000000' } },
+                        bottom: { style: 'thin', color: { argb: 'FF000000' } },
+                        right: { style: 'thin', color: { argb: 'FF000000' } },
+                    };
+                }
+            });
+
         }
     })
     function mergeCellsBasedOnCondition(worksheet1, columnName, Datanumber) {
         let startRow = 8;
         let endRow = 8;
-        
+
         worksheet1.eachRow({ includeEmpty: false }, (row, rowNumber) => {
             const value = row.values[Datanumber];
             const nextValue = worksheet1.getCell(`${columnName}${rowNumber + 1}`).value;
@@ -671,7 +672,7 @@ exports.TendarWinSheet = async (req, res) => {
 
     }
 
-    
+
     mergeCellsBasedOnCondition(worksheet1, 'N', 14);
     mergeCellsBasedOnCondition(worksheet1, 'O', 15);
     mergeCellsBasedOnCondition(worksheet1, 'P', 16);
@@ -693,26 +694,26 @@ exports.TendarWinSheet = async (req, res) => {
     let valueOfR = 0
     let SumOfR = 0
     worksheet1.eachRow({ includeEmpty: false }, (row, rowNumber) => {
-        if(rowNumber > 7){
-            if(value != row.getCell(`N`).value){
+        if (rowNumber > 7) {
+            if (value != row.getCell(`N`).value) {
                 value = row.getCell(`N`).value
                 SumOfvalue += value
             }
 
-            if(valueOfO != row.getCell(`O`).value){
+            if (valueOfO != row.getCell(`O`).value) {
                 valueOfO = row.getCell(`O`).value
                 SumOfO += valueOfO
             }
 
-            if(valueOfR != row.getCell(`R`).value){
+            if (valueOfR != row.getCell(`R`).value) {
                 valueOfR = row.getCell(`R`).value
-                SumOfR+= valueOfR
+                SumOfR += valueOfR
             }
         }
     })
 
     const dataLength = Data.length;
-    let rowNumber =0;
+    let rowNumber = 0;
     for (let i = 0; i < dataLength + 1; i++) {
         rowNumber = i + 8
     }
@@ -751,19 +752,19 @@ exports.TendarWinSheet = async (req, res) => {
     for (let col = 2; col <= 28; col++) {
         const cell = row.getCell(col);
         cell.border = {
-          top: { style: 'thin', color: { argb: 'FF000000' } },
-          left: { style: 'thin', color: { argb: 'FF000000' } },
-          bottom: { style: 'thin', color: { argb: 'FF000000' } },
-          right: { style: 'thin', color: { argb: 'FF000000' } },
+            top: { style: 'thin', color: { argb: 'FF000000' } },
+            left: { style: 'thin', color: { argb: 'FF000000' } },
+            bottom: { style: 'thin', color: { argb: 'FF000000' } },
+            right: { style: 'thin', color: { argb: 'FF000000' } },
         };
         const cell1 = row1.getCell(col);
         cell1.border = {
-          top: { style: 'thin', color: { argb: 'FF000000' } },
-          left: { style: 'thin', color: { argb: 'FF000000' } },
-          bottom: { style: 'thin', color: { argb: 'FF000000' } },
-          right: { style: 'thin', color: { argb: 'FF000000' } },
+            top: { style: 'thin', color: { argb: 'FF000000' } },
+            left: { style: 'thin', color: { argb: 'FF000000' } },
+            bottom: { style: 'thin', color: { argb: 'FF000000' } },
+            right: { style: 'thin', color: { argb: 'FF000000' } },
         };
-      }
+    }
 
     workbook.xlsx.writeBuffer().then(function (buffer) {
         let xlsData = Buffer.concat([buffer]);
