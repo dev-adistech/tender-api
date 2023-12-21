@@ -55,6 +55,7 @@ var getcerti = require('./Routes/Utility/getcerti')
 var rateupdate = require('./Routes/Utility/rateupdate')
 
 var View = require('./Routes/View/View')
+var StoneDetailView = require('./Routes/View/StoneDetailView')
 var TendarCom = require('./Routes/Transaction/TendarCom')
 var TendarMast = require('./Routes/Transaction/TendarMast')
 var TendarEst = require('./Routes/Transaction/TendarEst')
@@ -122,5 +123,6 @@ router.use('/rateupdate', rateupdate);
 router.use('/LoginPermission',LoginPermission);
 
 router.use('/View', View);
+router.use('/StoneDetailView', StoneDetailView);
 
 module.exports = router;

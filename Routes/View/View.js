@@ -13,6 +13,7 @@ router.post('/BVView', verifyToken, _view.BVView)
 router.post('/BidDataView', verifyToken, _view.BidDataView)
 router.post('/ColAnalysis', verifyToken, _view.ColAnalysis)
 router.post('/TenderWin', verifyToken, _view.TenderWin)
+router.post('/StoneidSellDet', verifyToken, _view.StoneidSellDet)
 router.post('/TendarWinSheet', _view.TendarWinSheet)
 
 module.exports = router;

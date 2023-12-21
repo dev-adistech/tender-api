@@ -313,6 +313,39 @@ exports.TenderWin = async (req, res) => {
     });
 }
 
+exports.StoneidSellDet = async (req, res) => {
+
+    jwt.verify(req.token, _tokenSecret, async (err, authData) => {
+        if (err) {
+            res.sendStatus(401);
+        } else {
+            const TokenData = await authData;
+
+            try {
+                var request = new sql.Request();
+
+                request.input('S_NAME', sql.VarChar(50), req.body.S_NAME)
+                request.input('C_NAME', sql.VarChar(5), req.body.C_NAME)
+                request.input('Q_NAME', sql.VarChar(5), req.body.Q_NAME)
+                request.input('CARAT', sql.Numeric(10,3), req.body.CARAT)
+                request.input('LAB', sql.VarChar(10), req.body.LAB)
+                request.input('TYPE', sql.VarChar(5), req.body.TYPE)
+
+                request = await request.execute('usp_StoneidSellDet');
+
+                if (request.recordset) {
+                    res.json({ success: 1, data: request.recordset })
+                } else {
+                    res.json({ success: 0, data: "Not Found" })
+                }
+
+            } catch (err) {
+                res.json({ success: 0, data: err })
+            }
+        }
+    });
+}
+
 exports.TendarWinSheet = async (req, res) => {
 
     let Data = JSON.parse(req.body.DataRow);
