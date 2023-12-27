@@ -121,6 +121,7 @@ exports.CertiResultSave = async (req, res) => {
                     request.input('FOVERTONE', sql.VarChar(150), PerArr[i].FOVERTONE)
                     request.input('SDATE', sql.DateTime2, new Date(PerArr[i].SDATE))
                     request.input('CR_NAME', sql.VarChar(10), PerArr[i].CR_NAME)
+                    request.input('GI_DATE', sql.DateTime2, new Date(PerArr[i].GI_DATE))
                    
 
                     request = await request.execute('USP_CertiResultSave');
