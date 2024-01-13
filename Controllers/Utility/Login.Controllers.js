@@ -43,7 +43,7 @@ exports.LoginAuthentication = async (req, res) => {
 
             res.json({ success: 6, data: `${request.recordset[0].USERID} can not login from this url` })
           } else if (originalText == req.body.PASS) {
-            if (req.body.BASEURL != 'api.tender.peacocktech.in') {
+            if (req.body.BASEURL != 'api.tender.peacocktech.in') { // api.tender.peacocktech.in
               jwt.sign({
                 UserId: request.recordset[0].USERID,
                 USER_FULLNAME: request.recordset[0].USER_FULLNAME,
@@ -89,7 +89,7 @@ exports.LoginAuthentication = async (req, res) => {
 
         }
         else if (originalText == req.body.PASS) {
-          if (req.body.BASEURL != 'api.tender.peacocktech.in') {
+          if (req.body.BASEURL != 'api.tender.peacocktech.in') { // api.tender.peacocktech.in
             jwt.sign({
               UserId: request.recordset[0].USERID,
               USER_FULLNAME: request.recordset[0].USER_FULLNAME,

@@ -719,7 +719,7 @@ exports.TendarWinSheet = async (req, res) => {
     mergeCellsBasedOnCondition(worksheet1, 'AB', 28);
 
     let value = 0
-    let SumOfvalue = 0
+    let o = 0
 
     let valueOfO = 0
     let SumOfO = 0
