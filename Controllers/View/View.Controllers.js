@@ -224,9 +224,37 @@ exports.BidDataView = async (req, res) => {
                 var request = new sql.Request();
 
                 request.input('COMP_CODE', sql.VarChar(10), req.body.COMP_CODE)
-                request.input('DETID', sql.Int, parseInt(req.body.DETID))
+                request.input('DETID', sql.VarChar(7991), req.body.DETID)
 
                 request = await request.execute('VW_BidDataView');
+
+                if (request.recordset) {
+                    res.json({ success: 1, data: request.recordset })
+                } else {
+                    res.json({ success: 0, data: "Not Found" })
+                }
+
+            } catch (err) {
+                res.json({ success: 0, data: err })
+            }
+        }
+    });
+}
+exports.ParcelBidDataView = async (req, res) => {
+
+    jwt.verify(req.token, _tokenSecret, async (err, authData) => {
+        if (err) {
+            res.sendStatus(401);
+        } else {
+            const TokenData = await authData;
+
+            try {
+                var request = new sql.Request();
+
+                request.input('COMP_CODE', sql.VarChar(10), req.body.COMP_CODE)
+                request.input('DETID', sql.Int, parseInt(req.body.DETID))
+
+                request = await request.execute('VW_ParcelBidDataView');
 
                 if (request.recordset) {
                     res.json({ success: 1, data: request.recordset })
@@ -719,13 +747,13 @@ exports.TendarWinSheet = async (req, res) => {
     mergeCellsBasedOnCondition(worksheet1, 'AB', 28);
 
     let value = 0
-    let o = 0
 
     let valueOfO = 0
     let SumOfO = 0
 
     let valueOfR = 0
     let SumOfR = 0
+    let SumOfvalue = 0
     worksheet1.eachRow({ includeEmpty: false }, (row, rowNumber) => {
         if (rowNumber > 7) {
             if (value != row.getCell(`N`).value) {
