@@ -5,6 +5,7 @@ var { verifyToken } = require('../../Config/verify/verify');
 var _dashboard = require('../../Controllers/Dashboard/Dashboard.Controllers');
 
 router.post('/FillAllMaster', verifyToken, _dashboard.FillAllMaster)
+router.post('/FillAllExpTendar', verifyToken, _dashboard.FillAllExpTendar)
 router.post('/DashStockFill', verifyToken, _dashboard.DashStockFill)
 router.post('/DashReceiveFill', verifyToken, _dashboard.DashReceiveFill)
 router.post('/DashReceiveStockConfirm', verifyToken, _dashboard.DashReceiveStockConfirm)

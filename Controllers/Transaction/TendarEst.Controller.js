@@ -238,6 +238,8 @@ exports.TendarPrdDetDock = async (req, res) => {
 
         request.input("COMP_CODE", sql.VarChar(10), req.body.COMP_CODE);
         request.input("DETID", sql.Int, parseInt(req.body.DETID));
+        request.input("IUSER", sql.VarChar(10), req.body.IUSER);
+        request.input("CAT", sql.VarChar(2), req.body.CAT);
 
         request = await request.execute("USP_TendarPrdDetDock");
 

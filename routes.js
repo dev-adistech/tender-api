@@ -60,6 +60,7 @@ var TendarCom = require('./Routes/Transaction/TendarCom')
 var TendarMast = require('./Routes/Transaction/TendarMast')
 var TendarEst = require('./Routes/Transaction/TendarEst')
 var LotMap = require('./Routes/Transaction/LotMap')
+var ExpDate = require('./Routes/Transaction/ExpDate')
 var ParcelEnt = require('./Routes/Transaction/ParcelEnt')
 var LoginPermission = require('./Routes/Utility/LoginPermission')
 var RapCalc = require('./Routes/Rap/RapCalc')
@@ -117,6 +118,7 @@ router.use('/TendarCom', TendarCom);
 router.use('/TendarMast', TendarMast);
 router.use('/TendarEst', TendarEst);
 router.use('/LotMap', LotMap);
+router.use('/ExpDate', ExpDate);
 router.use('/ParcelEnt', ParcelEnt);
 
 router.use('/Login', Login);
