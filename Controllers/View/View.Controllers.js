@@ -381,10 +381,11 @@ exports.TendarWinSheet = async (req, res) => {
     const Excel = require('exceljs');
     const workbook = new Excel.Workbook();
     const worksheet1 = workbook.addWorksheet("Summary");
-    // console.log(HeaderData[0])
+
     worksheet1.columns = [
         { key: "Blank" },
         { key: "LOT" },
+        { key: "AUSER" },
         { key: "RWEIGHT" },
         { key: "SHAP" },
         { key: "CUT" },
@@ -393,6 +394,8 @@ exports.TendarWinSheet = async (req, res) => {
         { key: "CLIYARITY" },
         { key: "INC" },
         { key: "FLO" },
+        { key: "ML_NAME" },
+        { key: "SH_NAME" },
         { key: "RAP" },
         { key: "DIS" },
         { key: "AMOUNT" },
@@ -411,6 +414,7 @@ exports.TendarWinSheet = async (req, res) => {
         { key: "USER1" },
         { key: "USER2" },
         { key: "USER3" },
+        { key: "BVCOMMENT" },
     ];
 
     const columnA = worksheet1.getColumn('A');
@@ -441,35 +445,43 @@ exports.TendarWinSheet = async (req, res) => {
     const columnZ = worksheet1.getColumn('Z');
     const columnAA = worksheet1.getColumn('AA');
     const columnAB = worksheet1.getColumn('AB');
+    const columnAC = worksheet1.getColumn('AC');
+    const columnAD = worksheet1.getColumn('AD');
+    const columnAE = worksheet1.getColumn('AE');
+    const columnAF = worksheet1.getColumn('AF');
 
     columnA.width = 3.71;
-    columnB.width = 16;
-    columnC.width = 14;
-    columnD.width = 7.71;
-    columnE.width = 7.71;
-    columnF.width = 8.71;
-    columnG.width = 9.30;
-    columnH.width = 13.71;
-    columnI.width = 5.15;
-    columnJ.width = 13.71;
-    columnK.width = 8.71;
+    columnB.width = 15;
+    columnC.width = 18.30;
+    columnD.width = 14.57;
+    columnE.width = 7.43;
+    columnF.width = 5.50;
+    columnG.width = 5.50;
+    columnH.width = 9;
+    columnI.width = 12.50;
+    columnJ.width = 8.14;
+    columnK.width = 5.71;
     columnL.width = 5.44;
-    columnM.width = 13;
-    columnN.width = 15.57;
-    columnO.width = 14;
-    columnP.width = 20.30;
-    columnQ.width = 11.57;
-    columnR.width = 17.71;
-    columnS.width = 17.71;
-    columnT.width = 11.57;
-    columnU.width = 11.57;
-    columnV.width = 9.15;
-    columnW.width = 7.30;
-    columnX.width = 11.30;
-    columnY.width = 7.17;
-    columnZ.width = 9.43;
-    columnAA.width = 7.71;
-    columnAB.width = 8.43;
+    columnM.width = 5.44;
+    columnN.width = 5.30;
+    columnO.width = 5.15;
+    columnP.width = 12.40;
+    columnQ.width = 14.71;
+    columnR.width = 8.30;
+    columnS.width = 19;
+    columnT.width = 6.15;
+    columnU.width = 11.30;
+    columnV.width = 14.71;
+    columnW.width = 12;
+    columnX.width = 5.43;
+    columnY.width = 5.43;
+    columnZ.width = 5.43;
+    columnAA.width = 5.43;
+    columnAB.width = 5.60;
+    columnAC.width = 5.60;
+    columnAD.width = 10.14;
+    columnAE.width = 5.71;
+    columnAF.width = 26.86;
 
     columnC.alignment = { horizontal: 'center', vertical: 'middle' };
     columnB.alignment = { horizontal: 'center', vertical: 'middle' };
@@ -481,24 +493,17 @@ exports.TendarWinSheet = async (req, res) => {
     columnP.alignment = { horizontal: 'center', vertical: 'middle' };
     columnQ.alignment = { horizontal: 'center', vertical: 'middle' };
     columnR.alignment = { horizontal: 'center', vertical: 'middle' };
+    columnU.alignment = { horizontal: 'center', vertical: 'middle' };
+    columnW.alignment = { horizontal: 'center', vertical: 'middle' };
+    columnX.alignment = { horizontal: 'center', vertical: 'middle' };
     columnY.alignment = { horizontal: 'center', vertical: 'middle' };
+    columnV.alignment = { horizontal: 'center', vertical: 'middle' };
     columnZ.alignment = { horizontal: 'center', vertical: 'middle' };
     columnAA.alignment = { horizontal: 'center', vertical: 'middle' };
     columnAB.alignment = { horizontal: 'center', vertical: 'middle' };
-
-    worksheet1.mergeCells('D2:S6');
-    worksheet1.getCell('D2').value = HeaderData[0].HEADER
-    worksheet1.getCell('D2').font = { size: 48, bold: true }
-
-    worksheet1.mergeCells('T2:AB6');
-    worksheet1.getCell('T2').value = 'COLOR MACHINE COMMENT'
-    worksheet1.getCell('T2').font = { size: 24, bold: true }
-    worksheet1.getCell('T2').border = {
-        top: { style: 'thin', color: { argb: 'FF000000' } },
-        left: { style: 'thin', color: { argb: 'FF000000' } },
-        bottom: { style: 'thin', color: { argb: 'FF000000' } },
-        right: { style: 'thin', color: { argb: 'FF000000' } },
-    };
+    columnAC.alignment = { horizontal: 'center', vertical: 'middle' };
+    columnAD.alignment = { horizontal: 'center', vertical: 'middle' };
+    columnAE.alignment = { horizontal: 'center', vertical: 'middle' };
 
     worksheet1.getRow(3).height = 36;
     worksheet1.getCell('B3').value = 'R-WIGHT'
@@ -588,20 +593,10 @@ exports.TendarWinSheet = async (req, res) => {
         right: { style: 'thin', color: { argb: 'FF000000' } },
     };
 
-    let headerRow = worksheet1.getRow(2)
-    for (let col = 2; col <= 12; col++) {
-        const cell = headerRow.getCell(col);
-        cell.border = {
-            top: { style: 'thin', color: { argb: 'FF000000' } },
-            left: { style: 'thin', color: { argb: 'FF000000' } },
-            bottom: { style: 'thin', color: { argb: 'FF000000' } },
-            right: { style: 'thin', color: { argb: 'FF000000' } },
-        };
-    }
-
     worksheet1.getRow(7).values = [
         "",
         "LOT.",
+        "TENDARUSER",
         "R.WEIGHT.",
         "SHAP",
         "CUT",
@@ -610,6 +605,8 @@ exports.TendarWinSheet = async (req, res) => {
         "CLIYARITY",
         "INC",
         "FLO",
+        "MLK",
+        "SHD",
         "RAP",
         "DIS",
         "AMOUNT",
@@ -628,10 +625,11 @@ exports.TendarWinSheet = async (req, res) => {
         "VHB",
         "YOGESH",
         "PS",
+        "Commnet",
         "",
     ];
     let header = worksheet1.getRow(7)
-    for (let col = 2; col <= 19; col++) {
+    for (let col = 2; col <= 22; col++) {
         const cell = header.getCell(col);
         cell.border = {
             top: { style: 'thin', color: { argb: 'FF000000' } },
@@ -642,7 +640,7 @@ exports.TendarWinSheet = async (req, res) => {
         cell.font = { size: 16, bold: true }
         cell.alignment = { horizontal: 'center', vertical: 'middle' };
     }
-    for (let col = 20; col <= 28; col++) {
+    for (let col = 23; col <= 32; col++) {
         const cell = header.getCell(col);
         cell.border = {
             top: { style: 'thin', color: { argb: 'FF000000' } },
@@ -664,6 +662,7 @@ exports.TendarWinSheet = async (req, res) => {
         worksheet1.addRow({
             Blank: '',
             LOT: Lot,
+            AUSER:record["AUSER"],
             RWEIGHT: record["I_CARAT"],
             SHAP: record["S_NAME"],
             CUT: record["CT_NAME"],
@@ -672,6 +671,8 @@ exports.TendarWinSheet = async (req, res) => {
             CLIYARITY: record["Q_NAME"],
             INC: record["IN_NAME"],
             FLO: record["FL_NAME"],
+            ML_NAME: record["ML_NAME"],
+            SH_NAME: record["SH_NAME"],
             RAP: record["ORAP"],
             DIS: record["DIS"],
             AMOUNT: record["AMT"],
@@ -690,9 +691,10 @@ exports.TendarWinSheet = async (req, res) => {
             USER1: record["U1"],
             USER2: record["U2"],
             USER3: record["U3"],
+            BVCOMMENT: record["BVCOMMENT"],
         });
     })
-
+     
     worksheet1.eachRow({ includeEmpty: false }, (row, rowNumber) => {
         if (rowNumber > 7) {
             row.eachCell({ includeEmpty: true }, (cell, colNumber) => {
@@ -734,17 +736,20 @@ exports.TendarWinSheet = async (req, res) => {
     }
 
 
-    mergeCellsBasedOnCondition(worksheet1, 'N', 14);
-    mergeCellsBasedOnCondition(worksheet1, 'O', 15);
-    mergeCellsBasedOnCondition(worksheet1, 'P', 16);
     mergeCellsBasedOnCondition(worksheet1, 'Q', 17);
     mergeCellsBasedOnCondition(worksheet1, 'R', 18);
     mergeCellsBasedOnCondition(worksheet1, 'S', 19);
     mergeCellsBasedOnCondition(worksheet1, 'T', 20);
+    mergeCellsBasedOnCondition(worksheet1, 'U', 21);
+    mergeCellsBasedOnCondition(worksheet1, 'V', 22);
     mergeCellsBasedOnCondition(worksheet1, 'Y', 25);
     mergeCellsBasedOnCondition(worksheet1, 'Z', 26);
     mergeCellsBasedOnCondition(worksheet1, 'AA', 27);
     mergeCellsBasedOnCondition(worksheet1, 'AB', 28);
+    mergeCellsBasedOnCondition(worksheet1, 'AC', 29);
+    mergeCellsBasedOnCondition(worksheet1, 'AD', 30);
+    mergeCellsBasedOnCondition(worksheet1, 'AE', 31);
+    mergeCellsBasedOnCondition(worksheet1, 'AF', 32);
 
     let value = 0
 
@@ -756,18 +761,18 @@ exports.TendarWinSheet = async (req, res) => {
     let SumOfvalue = 0
     worksheet1.eachRow({ includeEmpty: false }, (row, rowNumber) => {
         if (rowNumber > 7) {
-            if (value != row.getCell(`N`).value) {
-                value = row.getCell(`N`).value
+            if (value != row.getCell(`Q`).value) {
+                value = row.getCell(`Q`).value
                 SumOfvalue += value
             }
 
-            if (valueOfO != row.getCell(`O`).value) {
-                valueOfO = row.getCell(`O`).value
+            if (valueOfO != row.getCell(`R`).value) {
+                valueOfO = row.getCell(`R`).value
                 SumOfO += valueOfO
             }
 
-            if (valueOfR != row.getCell(`R`).value) {
-                valueOfR = row.getCell(`R`).value
+            if (valueOfR != row.getCell(`U`).value) {
+                valueOfR = row.getCell(`U`).value
                 SumOfR += valueOfR
             }
         }
@@ -778,39 +783,39 @@ exports.TendarWinSheet = async (req, res) => {
     for (let i = 0; i < dataLength + 1; i++) {
         rowNumber = i + 8
     }
-    worksheet1.mergeCells(`C${rowNumber}:C${rowNumber + 1}`);
-    worksheet1.mergeCells(`N${rowNumber}:N${rowNumber + 1}`);
-    worksheet1.mergeCells(`O${rowNumber}:O${rowNumber + 1}`);
+    worksheet1.mergeCells(`D${rowNumber}:D${rowNumber + 1}`);
+    worksheet1.mergeCells(`Q${rowNumber}:Q${rowNumber + 1}`);
     worksheet1.mergeCells(`R${rowNumber}:R${rowNumber + 1}`);
+    worksheet1.mergeCells(`U${rowNumber}:U${rowNumber + 1}`);
+    worksheet1.getCell(`D${rowNumber}`).fill = {
+        type: 'pattern',
+        pattern: 'solid',
+        fgColor: { argb: 'f8ff2b' }
+    };
+    worksheet1.getCell(`Q${rowNumber}`).fill = {
+        type: 'pattern',
+        pattern: 'solid',
+        fgColor: { argb: 'f8ff2b' }
+    };
     worksheet1.getCell(`R${rowNumber}`).fill = {
         type: 'pattern',
         pattern: 'solid',
         fgColor: { argb: 'f8ff2b' }
     };
-    worksheet1.getCell(`N${rowNumber}`).fill = {
+    worksheet1.getCell(`U${rowNumber}`).fill = {
         type: 'pattern',
         pattern: 'solid',
         fgColor: { argb: 'f8ff2b' }
     };
-    worksheet1.getCell(`O${rowNumber}`).fill = {
-        type: 'pattern',
-        pattern: 'solid',
-        fgColor: { argb: 'f8ff2b' }
-    };
-    worksheet1.getCell(`C${rowNumber}`).fill = {
-        type: 'pattern',
-        pattern: 'solid',
-        fgColor: { argb: 'f8ff2b' }
-    };
-    worksheet1.getCell(`C${rowNumber}`).value = HeaderData[0].I_CARAT;
-    worksheet1.getCell(`N${rowNumber}`).value = SumOfvalue.toFixed(0);
-    worksheet1.getCell(`O${rowNumber}`).value = SumOfO.toFixed(0);
-    worksheet1.getCell(`R${rowNumber}`).value = SumOfR.toFixed(0);
+    worksheet1.getCell(`D${rowNumber}`).value = HeaderData[0].I_CARAT;
+    worksheet1.getCell(`Q${rowNumber}`).value = SumOfvalue.toFixed(0);
+    worksheet1.getCell(`R${rowNumber}`).value = SumOfO.toFixed(0);
+    worksheet1.getCell(`U${rowNumber}`).value = SumOfR.toFixed(0);
 
     let row = worksheet1.getRow(rowNumber)
     let row1 = worksheet1.getRow(rowNumber + 1)
 
-    for (let col = 2; col <= 28; col++) {
+    for (let col = 2; col <= 32; col++) {
         const cell = row.getCell(col);
         cell.border = {
             top: { style: 'thin', color: { argb: 'FF000000' } },
@@ -820,6 +825,31 @@ exports.TendarWinSheet = async (req, res) => {
         };
         const cell1 = row1.getCell(col);
         cell1.border = {
+            top: { style: 'thin', color: { argb: 'FF000000' } },
+            left: { style: 'thin', color: { argb: 'FF000000' } },
+            bottom: { style: 'thin', color: { argb: 'FF000000' } },
+            right: { style: 'thin', color: { argb: 'FF000000' } },
+        };
+    }
+
+    worksheet1.mergeCells('D2:V6');
+    worksheet1.getCell('D2').value = HeaderData[0].HEADER
+    worksheet1.getCell('D2').font = { size: 48, bold: true }
+
+    worksheet1.mergeCells('W2:AF6');
+    worksheet1.getCell('W2').value = 'COLOR MACHINE COMMENT'
+    worksheet1.getCell('W2').font = { size: 24, bold: true }
+    worksheet1.getCell('W2').border = {
+        top: { style: 'thin', color: { argb: 'FF000000' } },
+        left: { style: 'thin', color: { argb: 'FF000000' } },
+        bottom: { style: 'thin', color: { argb: 'FF000000' } },
+        right: { style: 'thin', color: { argb: 'FF000000' } },
+    };
+
+    let headerRow = worksheet1.getRow(2)
+    for (let col = 2; col <= 12; col++) {
+        const cell = headerRow.getCell(col);
+        cell.border = {
             top: { style: 'thin', color: { argb: 'FF000000' } },
             left: { style: 'thin', color: { argb: 'FF000000' } },
             bottom: { style: 'thin', color: { argb: 'FF000000' } },

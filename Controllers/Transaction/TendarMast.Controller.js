@@ -77,6 +77,7 @@ exports.TendarMastSave = async (req, res) => {
                 request.input('T_NAME', sql.VarChar(50), req.body.T_NAME)
                 request.input('ISACTIVE',sql.Bit,req.body.ISACTIVE)
                 request.input('ISMIX',sql.Bit,req.body.ISMIX)
+                request.input('ISASSORT',sql.Bit,req.body.ISASSORT)
                 request.input('T_CARAT', sql.Numeric(10,3), req.body.T_CARAT)
                 request.input('T_PCS', sql.Int, parseInt(req.body.T_PCS))
                 
