@@ -43,6 +43,7 @@ var DepthMast = require('./Routes/Master/DepthMast')
 var RatioMast = require('./Routes/Master/RatioMast')
 
 var RapCutDisc = require('./Routes/Rap/RapCutDisc')
+var Calculator = require('./Routes/Rap/Calculator')
 var RapFloDisc = require('./Routes/Rap/RapFloDisc')
 var RapIncDisc = require('./Routes/Rap/RapIncDisc')
 var RapMast = require('./Routes/Rap/RapMast')
@@ -109,6 +110,7 @@ router.use('/DepthMast', DepthMast);
 router.use('/RatioMast', RatioMast);
 
 router.use('/RapCutDisc', RapCutDisc);
+router.use('/Calculator', Calculator);
 router.use('/RapFloDisc', RapFloDisc);
 router.use('/RapIncDisc', RapIncDisc);
 router.use('/RapMast', RapMast);
