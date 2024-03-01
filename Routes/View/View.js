@@ -16,5 +16,6 @@ router.post('/ColAnalysis', verifyToken, _view.ColAnalysis)
 router.post('/TenderWin', verifyToken, _view.TenderWin)
 router.post('/StoneidSellDet', verifyToken, _view.StoneidSellDet)
 router.post('/TendarWinSheet', _view.TendarWinSheet)
+router.post('/TendarWinSheetUnmatch', _view.TendarWinSheetUnmatch)
 
 module.exports = router;

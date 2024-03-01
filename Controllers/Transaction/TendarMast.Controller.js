@@ -80,6 +80,7 @@ exports.TendarMastSave = async (req, res) => {
                 request.input('ISASSORT',sql.Bit,req.body.ISASSORT)
                 request.input('T_CARAT', sql.Numeric(10,3), req.body.T_CARAT)
                 request.input('T_PCS', sql.Int, parseInt(req.body.T_PCS))
+                request.input('D_DIS', sql.Numeric(10,2), req.body.D_DIS)
                 
 
                 request = await request.execute('USP_TendarMastSave');
