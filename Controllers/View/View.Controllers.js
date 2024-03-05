@@ -187,6 +187,33 @@ exports.PricingWrkMperSave = async (req, res) => {
     });
 }
 
+exports.TenderWinCommentSave = async (req, res) => {
+
+    jwt.verify(req.token, _tokenSecret, async (err, authData) => {
+        if (err) {
+            res.sendStatus(401);
+        } else {
+            const TokenData = await authData;
+
+            try {
+                var request = new sql.Request();
+                let IP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+
+                request.input('COMP_CODE', sql.VarChar(10), req.body.COMP_CODE)
+                request.input('DETID', sql.Int, parseInt(req.body.DETID))
+                request.input('SRNO', sql.Int, parseInt(req.body.SRNO))
+                request.input('WINCOMMENT', sql.VarChar(500), req.body.WINCOMMENT)
+
+                request = await request.execute('VW_TenderWinCommentSave');
+
+                res.json({ success: 1, data: '' })
+            } catch (err) {
+                res.json({ success: 0, data: err })
+            }
+        }
+    });
+}
+
 exports.BVView = async (req, res) => {
 
     jwt.verify(req.token, _tokenSecret, async (err, authData) => {
@@ -200,6 +227,7 @@ exports.BVView = async (req, res) => {
 
                 request.input('COMP_CODE', sql.VarChar(10), req.body.COMP_CODE)
                 request.input('DETID', sql.Int, parseInt(req.body.DETID))
+                request.input('SRNO', sql.Int, parseInt(req.body.SRNO))
 
                 request = await request.execute('VW_BVView');
 
@@ -687,7 +715,7 @@ exports.TendarWinSheet = async (req, res) => {
             PER: record["PER"],
             LABOUR: record["PERPAY"],
             LAB_NAME: record["LAB_NAME"],
-            Tenshan: record["T_NAME"],
+            tenshan: record["T_NAME"],
             1: record["FLAT1"],
             2: record["FLAT2"],
             3: record["MED"],
@@ -1175,7 +1203,7 @@ exports.TendarWinSheetUnmatch = async (req, res) => {
             PER: record["PER"],
             LABOUR: record["PERPAY"],
             LAB_NAME: record["LAB_NAME"],
-            Tenshan: record["T_NAME"],
+            tenshan: record["T_NAME"],
             1: record["FLAT1"],
             2: record["FLAT2"],
             3: record["MED"],
