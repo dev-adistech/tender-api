@@ -22,6 +22,7 @@ exports.LabResultGet = async (req, res) => {
                 request.input("L_CODE", sql.VarChar(sql.MAX), req.body.L_CODE)
                 request.input("LSRNO", sql.Int, req.body.LSRNO)
                 request.input("LTAG", sql.VarChar(4), req.body.LTAG)
+                request.input("TYPE", sql.VarChar(10), req.body.TYPE)
 
                 request = await request.execute('PRED_LabResultGet')
 
