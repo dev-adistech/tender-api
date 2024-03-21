@@ -55,7 +55,7 @@ app.use(express.static(path.join(__dirname, "/Public")))
 app.use("/api", routes)
 
 app.get("/", (req, res) => {
-	res.send("Welcome To predacon api.")
+	res.send("Welcome To Tendar api.")
 })
 
 

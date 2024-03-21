@@ -4,7 +4,7 @@ module.exports = {
       script: 'index.js',
       autorestart: true,
       watch: true,
-      name: 'Predacon-api',
+      name: 'Tendar-api',
       instances: 50,
       exec_mode: "cluster",
     }
